@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/splash/splash_screen.dart';
 
 void main() {
   runApp(const MyEcommerceApp());
@@ -10,13 +11,14 @@ class MyEcommerceApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(    
+      theme: ThemeData(
+        fontFamily: 'Montserrat',
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const SplashScreen(),
     );
   }
 }
-
