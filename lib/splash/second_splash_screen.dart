@@ -108,11 +108,12 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
             padding: const EdgeInsets.only(left: 295, top: 168),
             child: TextButton(
               onPressed: () {
-                Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ThirdSplashScreen(),
-                    ));
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ThirdSplashScreen(),
+                  ),
+                );
               },
               child: const Text(
                 'Next',
