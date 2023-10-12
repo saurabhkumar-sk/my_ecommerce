@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/splash/fourth_splash_screen.dart';
+import 'package:my_ecommerce/screens/login_screen.dart';
 import 'package:my_ecommerce/splash/second_splash_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
 
-class ThirdSplashScreen extends StatefulWidget {
-  const ThirdSplashScreen({super.key});
+class FourthSplascScreen extends StatefulWidget {
+  const FourthSplascScreen({super.key});
 
   @override
-  State<ThirdSplashScreen> createState() => _ThirdSplashScreenState();
+  State<FourthSplascScreen> createState() => _FourthSplascScreenState();
 }
 
-class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
-  int count = 2;
+class _FourthSplascScreenState extends State<FourthSplascScreen> {
+  int count = 3;
   int count2 = 3;
 
   @override
@@ -71,17 +71,17 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 3,
-              right: 2,
-              top: 158,
+              left: 12,
+              right: 13,
+              top: 75,
             ),
             child: Image.asset(
-              MyImages.saleconsulting,
+              MyImages.shoppingbag,
             ),
           ),
           const SizedBox(height: 33.67),
           const Text(
-            'Make Payment',
+            'Get Your Order',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -136,15 +136,15 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
                 ),
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
+                    Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const FourthSplascScreen(),
+                        builder: (context) => const LoginScreen(),
                       ),
                     );
                   },
                   child: const Text(
-                    'Next',
+                    'Get Started',
                     style: TextStyle(
                       color: MyColors.pink,
                       fontWeight: FontWeight.w600,
