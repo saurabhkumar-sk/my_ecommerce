@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/screens/login_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 
 class SignUpScreen extends StatefulWidget {
@@ -56,9 +57,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 prefixIcon: Icon(
                   Icons.lock,
                   color: MyColors.grey,
+                  size: 20,
                 ),
                 suffixIcon: Icon(
                   Icons.remove_red_eye_outlined,
+                  size: 20,
                   color: MyColors.grey,
                 ),
                 labelText: 'Password',
@@ -76,11 +79,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
               decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.lock,
+                  size: 20,
                   color: MyColors.grey,
                 ),
                 suffixIcon: Icon(
                   Icons.remove_red_eye_outlined,
                   color: MyColors.grey,
+                  size: 20,
                 ),
                 labelText: 'ConfirmPassword',
                 labelStyle:
@@ -96,8 +101,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
             RichText(
               text: const TextSpan(
                 style: TextStyle(
-                  // fontSize: 36,
-                  // fontWeight: FontWeight.w700,
+                  fontSize: 12,
+                  fontWeight: FontWeight.w400,
                   color: MyColors.grey,
                 ),
                 children: [
@@ -172,7 +177,14 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
             Center(
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushAndRemoveUntil(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                      (route) => false);
+                },
                 child: RichText(
                   text: const TextSpan(
                     children: [

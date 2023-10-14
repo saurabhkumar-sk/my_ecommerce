@@ -4,20 +4,43 @@ import 'package:my_ecommerce/splash/second_splash_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
 
-class FourthSplascScreen extends StatefulWidget {
-  const FourthSplascScreen({super.key});
+class FirstSplashScreen extends StatefulWidget {
+  const FirstSplashScreen({super.key});
 
   @override
-  State<FourthSplascScreen> createState() => _FourthSplascScreenState();
+  State<FirstSplashScreen> createState() => _FirstSplashScreenState();
 }
 
-class _FourthSplascScreenState extends State<FourthSplascScreen> {
-  int count = 3;
+class _FirstSplashScreenState extends State<FirstSplashScreen> {
+  int count = 1;
   int count2 = 3;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(left: 312, bottom: 23.15, right: 19),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const SecondSplashScreen()));
+              },
+              child: const Text(
+                'Next',
+                style: TextStyle(
+                  color: MyColors.pink,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Padding(
@@ -59,11 +82,21 @@ class _FourthSplascScreenState extends State<FourthSplascScreen> {
                     ],
                   ),
                 ),
-                const Text(
-                  'Skip',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ],
@@ -71,17 +104,16 @@ class _FourthSplascScreenState extends State<FourthSplascScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 12,
-              right: 13,
-              top: 75,
+              left: 37,
+              top: 110,
+              bottom: 15,
             ),
             child: Image.asset(
-              MyImages.shoppingbag,
+              MyImages.fashionsshop,
             ),
           ),
-          const SizedBox(height: 33.67),
           const Text(
-            'Get Your Order',
+            'Choose Products',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -106,55 +138,6 @@ class _FourthSplascScreenState extends State<FourthSplascScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 160,
-              left: 17,
-              right: 17,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    count--;
-                    Navigator.pop(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SecondSplashScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Prev',
-                    style: TextStyle(
-                      color: MyColors.fontgrey,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Get Started',
-                    style: TextStyle(
-                      color: MyColors.pink,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );

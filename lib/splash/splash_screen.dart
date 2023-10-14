@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_ecommerce/splash/first_splash_screen.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
-import 'package:my_ecommerce/splash/second_splash_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
           context,
           MaterialPageRoute(
-            builder: (context) => const SecondSplashScreen(),
+            builder: (context) => const FirstSplashScreen(),
           ));
     });
     super.initState();

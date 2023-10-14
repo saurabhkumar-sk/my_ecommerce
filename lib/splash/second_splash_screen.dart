@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/splash/thirs_splash_screen.dart';
+import 'package:my_ecommerce/screens/login_screen.dart';
+import 'package:my_ecommerce/splash/third_splash_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
 
@@ -11,12 +12,61 @@ class SecondSplashScreen extends StatefulWidget {
 }
 
 class _SecondSplashScreenState extends State<SecondSplashScreen> {
-  int count = 1;
+  int count = 2;
   int count2 = 3;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.only(
+          left: 21,
+          right: 9,
+          bottom: 22,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+              onPressed: () {
+                count--;
+                Navigator.pop(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SecondSplashScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Prev',
+                style: TextStyle(
+                  color: MyColors.fontgrey,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ThirdSplascScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Next',
+                style: TextStyle(
+                  color: MyColors.pink,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Padding(
@@ -58,11 +108,21 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
                     ],
                   ),
                 ),
-                const Text(
-                  'Skip',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ],
@@ -70,16 +130,17 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 37,
-              top: 110,
-              bottom: 15,
+              left: 3,
+              right: 2,
+              top: 158,
             ),
             child: Image.asset(
-              MyImages.fashionsshop,
+              MyImages.saleconsulting,
             ),
           ),
+          const SizedBox(height: 33.67),
           const Text(
-            'Choose Products',
+            'Make Payment',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -104,27 +165,6 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 295, top: 168),
-            child: TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ThirdSplashScreen(),
-                  ),
-                );
-              },
-              child: const Text(
-                'Next',
-                style: TextStyle(
-                  color: MyColors.pink,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          )
         ],
       ),
     );

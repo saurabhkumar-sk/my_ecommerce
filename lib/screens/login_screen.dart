@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/screens/signup_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
-import 'package:my_ecommerce/theme/my_image.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -106,7 +105,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                 
+                },
                 child: const Text(
                   "Login",
                   style: TextStyle(
@@ -182,7 +183,7 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
 //Authentification buttons
- 
+
   Container socialMediaAuthButtons({required Widget widget}) {
     return Container(
       margin: const EdgeInsets.all(10),

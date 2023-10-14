@@ -1,23 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/splash/fourth_splash_screen.dart';
+import 'package:my_ecommerce/screens/login_screen.dart';
 import 'package:my_ecommerce/splash/second_splash_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
 
-class ThirdSplashScreen extends StatefulWidget {
-  const ThirdSplashScreen({super.key});
+class ThirdSplascScreen extends StatefulWidget {
+  const ThirdSplascScreen({super.key});
 
   @override
-  State<ThirdSplashScreen> createState() => _ThirdSplashScreenState();
+  State<ThirdSplascScreen> createState() => _ThirdSplascScreenState();
 }
 
-class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
-  int count = 2;
+class _ThirdSplascScreenState extends State<ThirdSplascScreen> {
+  int count = 3;
   int count2 = 3;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      bottomNavigationBar: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 22),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            TextButton(
+              onPressed: () {
+                count--;
+                Navigator.pop(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const SecondSplashScreen(),
+                  ),
+                );
+              },
+              child: const Text(
+                'Prev',
+                style: TextStyle(
+                  color: MyColors.fontgrey,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginScreen(),
+                    ),
+                    (route) => false);
+              },
+              child: const Text(
+                'Get Started',
+                style: TextStyle(
+                  color: MyColors.pink,
+                  fontWeight: FontWeight.w600,
+                  fontSize: 18,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
       body: Column(
         children: [
           Padding(
@@ -59,11 +104,21 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
                     ],
                   ),
                 ),
-                const Text(
-                  'Skip',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w600,
-                    fontSize: 18,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const LoginScreen(),
+                      ),
+                    );
+                  },
+                  child: const Text(
+                    'Skip',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w600,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               ],
@@ -71,17 +126,16 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 3,
-              right: 2,
-              top: 158,
+              left: 12,
+              right: 13,
+              top: 75,
             ),
             child: Image.asset(
-              MyImages.saleconsulting,
+              MyImages.shoppingbag,
             ),
           ),
-          const SizedBox(height: 33.67),
           const Text(
-            'Make Payment',
+            'Get Your Order',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
@@ -106,55 +160,6 @@ class _ThirdSplashScreenState extends State<ThirdSplashScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 160,
-              left: 17,
-              right: 17,
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                TextButton(
-                  onPressed: () {
-                    count--;
-                    Navigator.pop(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const SecondSplashScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Prev',
-                    style: TextStyle(
-                      color: MyColors.fontgrey,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const FourthSplascScreen(),
-                      ),
-                    );
-                  },
-                  child: const Text(
-                    'Next',
-                    style: TextStyle(
-                      color: MyColors.pink,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 18,
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          )
         ],
       ),
     );
