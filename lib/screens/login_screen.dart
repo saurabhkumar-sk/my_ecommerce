@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/screens/forget_password_screen.dart';
 import 'package:my_ecommerce/screens/signup_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 
@@ -76,16 +77,25 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(
+          Padding(
+            padding: const EdgeInsets.only(
               left: 242,
               top: 9,
             ),
-            child: Text(
-              'Forgot Password?',
-              style: TextStyle(
-                fontWeight: FontWeight.w400,
-                color: MyColors.pink,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ForgetPasswordScreen(),
+                    ));
+              },
+              child: const Text(
+                'Forgot Password?',
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  color: MyColors.pink,
+                ),
               ),
             ),
           ),
@@ -105,9 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
-                onPressed: () {
-                 
-                },
+                onPressed: () {},
                 child: const Text(
                   "Login",
                   style: TextStyle(

@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class MyLogos {
   static const splashlogo = 'assets/svg/logoipsum-255 1.svg';
 }
@@ -9,5 +11,12 @@ class MyImages {
   static const facebook = 'assets/images/facebook-app-symbol 1.png';
   static const google = 'assets/images/google 1.png';
   static const apple = 'assets/images/apple 1.png';
+}
 
+class MyIcon {
+  static const message = Icon(Icons.mail);
+}
+
+class MyText {
+  static const email = 'Enter Your email address';
 }
