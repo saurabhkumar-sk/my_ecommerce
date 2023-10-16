@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/screens/get_started_screen.dart';
 import 'package:my_ecommerce/theme/my_color.dart';
 import 'package:my_ecommerce/theme/my_image.dart';
 
@@ -87,7 +88,7 @@ class ForgetPasswordScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => GetStartedScreen(),
+                      builder: (context) => const GetStartedScreen(),
                     ),
                   );
                 },
