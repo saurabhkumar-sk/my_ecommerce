@@ -35,33 +35,71 @@ class ForgetPasswordScreen extends StatelessWidget {
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 26),
-              child: TextFormField(
-                decoration: const InputDecoration(
-                  prefixIcon: MyIcon.message,
-                  hintText: MyText.email,
-                  hintStyle: TextStyle(
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
+              child: SizedBox(
+                height: 55,
+                width: 317,
+                child: TextFormField(
+                  decoration: const InputDecoration(
+                    prefixIcon: MyIcon.message,
+                    fillColor: Colors.amber,
+                    hintText: MyText.email,
+                    hintStyle: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 12,
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(10))),
                   ),
-                  border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(10))),
                 ),
               ),
             ),
-            RichText(
-              text: const TextSpan(
-                children: [
-                  TextSpan(text: '*', style: TextStyle(color: MyColors.pink)),
-                  TextSpan(
+            ConstrainedBox(
+              constraints: BoxConstraints.tight(const Size(282, 48)),
+              child: RichText(
+                text: const TextSpan(
+                  children: [
+                    TextSpan(text: '*', style: TextStyle(color: MyColors.pink)),
+                    TextSpan(
                       text:
                           'We will send you a message to set or reset your new password',
-                      style: TextStyle(color: MyColors.grey)),
-                ],
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w400,
+                        color: Color(0xFF676767),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {},
-              child: const Text('Submit'),
+            const SizedBox(height: 26),
+            SizedBox(
+              width: 317,
+              height: 55,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: const Color(0xFFF83758),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => GetStartedScreen(),
+                    ),
+                  );
+                },
+                child: const Text(
+                  'Submit',
+                  style: TextStyle(
+                    color: MyColors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 20,
+                  ),
+                ),
+              ),
             ),
           ],
         ),
