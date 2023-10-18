@@ -83,6 +83,7 @@ List<ProductModel> products = [
   ),
 ];
 
+//5 star
 List<IconLogo> iconLogo = [
   IconLogo(
     icon: const Icon(
@@ -118,5 +119,40 @@ List<IconLogo> iconLogo = [
       color: Colors.grey,
       size: 11,
     ),
+  ),
+];
+
+//
+List<ProductModel> product = [
+  ProductModel(
+    image: 'assets/images/watch.png',
+    productName: 'IWC Schaffhausen 2021 Pilot/s Watch "SIHH 2019" 44mm',
+    productDescription: '',
+    price: '₹650',
+    discountPrice: '₹1599 60%Off',
+    icon: 'icon',
+  ),
+  ProductModel(
+    image: 'assets/images/image 18.png',
+    productName: 'Labbin White Sneakers For Men and Female',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹650',
+    discountPrice: '₹1250 70%Off',
+    icon: 'icon',
+  ),ProductModel(
+    image: 'assets/images/watch.png',
+    productName: 'IWC Schaffhausen 2021 Pilot/s Watch "SIHH 2019" 44mm',
+    productDescription: '',
+    price: '₹650',
+    discountPrice: '₹1599 60%Off',
+    icon: 'icon',
+  ),
+  ProductModel(
+    image: 'assets/images/image 18.png',
+    productName: 'Labbin White Sneakers For Men and Female',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹650',
+    discountPrice: '₹1250 70%Off',
+    icon: 'icon',
   ),
 ];

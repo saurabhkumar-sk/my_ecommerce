@@ -363,59 +363,357 @@ class HomeScreen extends StatelessWidget {
                     products.length,
                     (index) => Padding(
                       padding: const EdgeInsets.only(left: 12),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          ClipRRect(
-                            borderRadius: BorderRadius.circular(6),
-                            child: Image.asset(
-                              products[index].image,
-                            ),
-                          ),
-                          Text(
-                            products[index].productName,
-                            style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          ConstrainedBox(
-                            constraints: BoxConstraints.tight(
-                              const Size(162, 32),
-                            ),
-                            child: Text(
-                              products[index].productDescription,
-                              style: const TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: MyColors.primarywhite,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(6),
+                              child: Image.asset(
+                                products[index].image,
                               ),
                             ),
-                          ),
-                          Text(
-                            products[index].price,
-                            style: const TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w500,
+                            Padding(
+                              padding: const EdgeInsets.all(4),
+                              child: Text(
+                                products[index].productName,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
-                          ),
-                          Text(
-                            products[index].discountPrice,
-                            style: const TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                left: 4,
+                                right: 4,
+                              ),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints.tight(
+                                  const Size(162, 32),
+                                ),
+                                child: Text(
+                                  products[index].productDescription,
+                                  style: const TextStyle(
+                                    fontSize: 10,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
                             ),
-                          ),
-                        ],
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text(
+                                products[index].price,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4.0),
+                              child: Text(
+                                products[index].discountPrice,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
-
-            const SizedBox(
-              height: 50,
+            Container(
+              margin: const EdgeInsets.all(16),
+              height: 84,
+              width: 343,
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.all(Radius.circular(6)),
+                color: MyColors.primarywhite,
+              ),
+              child: Row(
+                children: [
+                  Image.asset('assets/images/special_offer.png'),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 24, top: 12),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Special Offers   😱',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        const SizedBox(height: 8),
+                        ConstrainedBox(
+                          constraints:
+                              BoxConstraints.tight(const Size(171, 32)),
+                          child: const Text(
+                            'We make sure you get the offer you need at best prices',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w300,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+            Stack(
+              children: [
+                // const Text(
+                //   'Flat and Heels',
+                //   style: TextStyle(
+                //     fontSize: 16,
+                //     fontWeight: FontWeight.w500,
+                //   ),
+                // ),
+                // const Text('Stand a chance to get rewarded'),
+                Image.asset('assets/images/mac.png'),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              child: Stack(
+                children: [
+                  Container(
+                    height: 60,
+                    width: 343,
+                    decoration: const BoxDecoration(
+                      color: MyColors.pink,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    top: 8,
+                    left: 8,
+                    child: Text(
+                      'Treanding Products',
+                      style: TextStyle(
+                        color: MyColors.primarywhite,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    left: 8,
+                    top: 36,
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.calendar_month_rounded,
+                          color: MyColors.primarywhite,
+                          size: 16,
+                        ),
+                        Text(
+                          '  Last Date 19/10/23 ',
+                          style: TextStyle(
+                            color: MyColors.primarywhite,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Positioned(
+                    top: 5,
+                    left: 215,
+                    right: 12,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                          width: 1,
+                          color: MyColors.primarywhite,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        fixedSize: const Size(89, 32),
+                      ),
+                      onPressed: () {},
+                      child: const Row(
+                        children: [
+                          Text(
+                            'View All',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: MyColors.primarywhite),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 16,
+                            color: MyColors.primarywhite,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16, top: 16, bottom: 16),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                    product.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: MyColors.primarywhite,
+                        ),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(4),
+                              child: Image.asset(
+                                product[index].image,
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4),
+                              child: ConstrainedBox(
+                                constraints: BoxConstraints.tight(
+                                  const Size(134, 48),
+                                ),
+                                child: Text(
+                                  product[index].productName,
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(4.0),
+                              child: Text(
+                                products[index].price,
+                                style: const TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 4.0),
+                              child: Text(
+                                products[index].discountPrice,
+                                style: const TextStyle(
+                                  fontSize: 10,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              width: 343,
+              height: 270,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                color: MyColors.primarywhite,
+              ),
+              child: Stack(
+                children: [
+                  Image.asset('assets/images/hot summer sell.png'),
+                  const Positioned(
+                    top: 208,
+                    left: 8,
+                    child: Text(
+                      'New Arrivals',
+                      style: TextStyle(
+                        // color: MyColors.primarywhite,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ),
+                  const Positioned(
+                    left: 8,
+                    top: 234,
+                    child: Text(
+                      'Summer’ 25 Collections',
+                      style: TextStyle(
+                        // color: MyColors.primarywhite,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                  Positioned(
+                    right: 12,
+                    bottom: 16,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        backgroundColor: MyColors.pink,
+                        side: const BorderSide(
+                          color: MyColors.pink,
+                        ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        fixedSize: const Size(116, 28),
+                      ),
+                      onPressed: () {},
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'View All',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                              color: MyColors.primarywhite,
+                            ),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 16,
+                            color: MyColors.primarywhite,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 100,
+            )
           ],
         ),
       ),
