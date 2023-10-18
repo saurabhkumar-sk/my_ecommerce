@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/splash/first_splash_screen.dart';
-import 'package:my_ecommerce/theme/my_image.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

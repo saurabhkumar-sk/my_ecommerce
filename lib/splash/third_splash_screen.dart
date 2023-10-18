@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/login_screen.dart';
 import 'package:my_ecommerce/splash/second_splash_screen.dart';
-import 'package:my_ecommerce/theme/my_color.dart';
-import 'package:my_ecommerce/theme/my_image.dart';
+
 
 class ThirdSplascScreen extends StatefulWidget {
   const ThirdSplascScreen({super.key});
