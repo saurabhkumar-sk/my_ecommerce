@@ -40,7 +40,6 @@ class HomeScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        // physics: const ScrollPhysics(),
         child: Column(
           children: [
             Padding(
@@ -127,51 +126,58 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 17),
-            Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10)),
-                color: MyColors.primarywhite,
-              ),
-              margin: const EdgeInsets.only(left: 17),
-              height: 87,
-              width: 439,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    image.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        children: [
-                          const CircleAvatar(
-                            // backgroundImage: AssetImage(
-                            //   image[index].image,
-                            // ),
-                            radius: 28,
-                          ),
-                          Text(
-                            image[index].imageName,
-                            style: const TextStyle(
-                              fontSize: 10,
-                              fontWeight: FontWeight.w400,
+            Padding(
+              padding: const EdgeInsets.only(left: 5),
+              child: Container(
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(10),
+                      bottomLeft: Radius.circular(10)),
+                  color: MyColors.primarywhite,
+                ),
+                margin: const EdgeInsets.only(left: 17),
+                height: 87,
+                width: 439,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      image.length,
+                      // 6,
+                      (index) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          children: [
+                            CircleAvatar(
+                              backgroundImage: AssetImage(
+                                image[index].image,
+                              ),
+                              radius: 28,
                             ),
-                          ),
-                        ],
+                            Text(
+                              image[index].imageName,
+                              // 6.toString(),
+                              style: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
             ),
+
             const SizedBox(
               height: 20,
             ),
+
             SizedBox(
               height: 189,
-              width: 343,
+              width: 350,
               child: PageView(
                 children: [
                   Stack(
@@ -201,11 +207,10 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      // ignore: prefer_const_constructors
-                      Positioned(
+                      const Positioned(
                         top: 70,
                         left: 14,
-                        child: const Text(
+                        child: Text(
                           'Now in (product)',
                           style: TextStyle(
                             color: MyColors.primarywhite,
@@ -214,17 +219,39 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 14, right: 180),
+                      Positioned(
+                        left: 14,
+                        top: 117,
                         child: OutlinedButton(
-                            onPressed: () {},
-                            child: const Row(
-                              children: [
-                                Text('Shop Now'),
-                                Icon(Icons.arrow_forward_rounded)
-                              ],
-                            )),
-                      )
+                          style: OutlinedButton.styleFrom(
+                            side: const BorderSide(
+                              width: 1,
+                              color: MyColors.primarywhite,
+                            ),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(6),
+                            ),
+                            fixedSize: const Size(129, 32),
+                          ),
+                          onPressed: () {},
+                          child: const Row(
+                            children: [
+                              Text(
+                                'Shop Now',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w600,
+                                    color: MyColors.primarywhite),
+                              ),
+                              Icon(
+                                Icons.arrow_forward_rounded,
+                                size: 16,
+                                color: MyColors.primarywhite,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   Image.asset('assets/images/Rectangle 48.png'),
@@ -237,9 +264,9 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.only(left: 158, top: 8),
               child: const Row(
                 children: [
-                  PageCircle(),
-                  PageCircle(),
-                  PageCircle(),
+                  CircleR(),
+                  CircleR(),
+                  CircleR(),
                 ],
               ),
             ),
@@ -251,8 +278,11 @@ class HomeScreen extends StatelessWidget {
                     height: 60,
                     width: 343,
                     decoration: const BoxDecoration(
-                        color: MyColors.cyan,
-                        borderRadius: BorderRadius.all(Radius.circular(8))),
+                      color: MyColors.cyan,
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(8),
+                      ),
+                    ),
                   ),
                   const Positioned(
                     top: 8,
@@ -289,19 +319,102 @@ class HomeScreen extends StatelessWidget {
                   ),
                   Positioned(
                     top: 5,
-                    left: 242,
-                    child: TextButton(
-                      onPressed: () {},
-                      child: const Text(
-                        'View all',
-                        style: TextStyle(
+                    left: 215,
+                    right: 12,
+                    child: OutlinedButton(
+                      style: OutlinedButton.styleFrom(
+                        side: const BorderSide(
+                          width: 1,
                           color: MyColors.primarywhite,
                         ),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        fixedSize: const Size(89, 32),
+                      ),
+                      onPressed: () {},
+                      child: const Row(
+                        children: [
+                          Text(
+                            'View All',
+                            style: TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                                color: MyColors.primarywhite),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_rounded,
+                            size: 16,
+                            color: MyColors.primarywhite,
+                          ),
+                        ],
                       ),
                     ),
                   ),
                 ],
               ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 16),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                    products.length,
+                    (index) => Padding(
+                      padding: const EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.asset(
+                              products[index].image,
+                            ),
+                          ),
+                          Text(
+                            products[index].productName,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          ConstrainedBox(
+                            constraints: BoxConstraints.tight(
+                              const Size(162, 32),
+                            ),
+                            child: Text(
+                              products[index].productDescription,
+                              style: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          Text(
+                            products[index].price,
+                            style: const TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                          Text(
+                            products[index].discountPrice,
+                            style: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+            const SizedBox(
+              height: 50,
             ),
           ],
         ),
@@ -310,8 +423,9 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-class PageCircle extends StatelessWidget {
-  const PageCircle({
+//DOt Circle
+class CircleR extends StatelessWidget {
+  const CircleR({
     super.key,
   });
 

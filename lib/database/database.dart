@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:my_ecommerce/model/my_model.dart';
 
 class MyColors {
@@ -25,7 +24,7 @@ class MyImages {
   static const facebook = 'assets/images/facebook-app-symbol 1.png';
   static const google = 'assets/images/google 1.png';
   static const apple = 'assets/images/apple 1.png';
-  static const avatar = 'assets/images/2289_SkVNQSBGQU1PIDEwMjgtMTE2 1.png';
+  static const avatar = 'assets/images/avatar.png';
   static const logo = 'assets/svg/Group 34010 (1).svg';
 }
 
@@ -38,22 +37,86 @@ class MyText {
 }
 
 //Home Screen Images
-
 List<ImageModel> image = [
-  ImageModel(image: 'assets/svg/Group 34010 (1).svg', imageName: 'beauty'),
-  ImageModel(image: 'assets/svg/Group 34010 (1).svg', imageName: 'fashion'),
-  ImageModel(image: 'assets/svg/Group 34010 (1).svg', imageName: 'kids'),
-  ImageModel(image: 'assets/svg/Group 34010 (1).svg', imageName: 'mens'),
-  ImageModel(image: 'assets/svg/Group 34010 (1).svg', imageName: 'womens'),
+  ImageModel(image: 'assets/images/Ellipse 4.png', imageName: 'Beauty'),
+  ImageModel(image: 'assets/images/fashion.png', imageName: 'Fashion'),
+  ImageModel(
+      image: 'assets/images/unsplash_GCDjllzoKLo.png', imageName: 'Kids'),
+  ImageModel(image: 'assets/images/mens.png', imageName: 'Mens'),
+  ImageModel(image: 'assets/images/womens.png', imageName: 'Womens'),
+  ImageModel(image: 'assets/images/fashion.png', imageName: 'Winter'),
 ];
 
+//Product model
+List<ProductModel> products = [
+  ProductModel(
+    image: 'assets/images/girl.png',
+    productName: 'Women Printed Kurta',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹1500',
+    discountPrice: '₹2499 40%Off',
+    icon: 'icon',
+  ),
+  ProductModel(
+    image: 'assets/images/shoes.png',
+    productName: 'HRX by Hrithik Roshan',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹2499',
+    discountPrice: '₹4999 50%Off',
+    icon: 'icon',
+  ),
+  ProductModel(
+    image: 'assets/images/girl.png',
+    productName: 'Women Printed Kurta',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹1500',
+    discountPrice: '₹2499 40%Off',
+    icon: 'icon',
+  ),
+  ProductModel(
+    image: 'assets/images/shoes.png',
+    productName: 'HRX by Hrithik Roshan',
+    productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
+    price: '₹2499',
+    discountPrice: '₹4999 50%Off',
+    icon: 'icon',
+  ),
+];
 
-// List<ImageModel> image = [
-//   ImageModel(image: 'assets/images/Ellipse 4.png', imageName: 'Beauty'),
-//   ImageModel(image: 'assets/images/fashion.png', imageName: 'Fashion'),
-//   ImageModel(
-//       image: 'assets/images/unsplash_GCDjllzoKLo.png', imageName: 'Kids'),
-//   ImageModel(image: 'assets/images/mens.png', imageName: 'Mens'),
-//   ImageModel(image: 'assets/images/womens.png', imageName: 'Womens'),
-//   ImageModel(image: 'assets/images/fashion.png', imageName: 'Winter'),
-// ];
+List<IconLogo> iconLogo = [
+  IconLogo(
+    icon: const Icon(
+      Icons.star,
+      color: Color.fromARGB(255, 195, 178, 23),
+      size: 11,
+    ),
+  ),
+  IconLogo(
+    icon: const Icon(
+      Icons.star,
+      color: Color.fromARGB(255, 195, 178, 23),
+      size: 11,
+    ),
+  ),
+  IconLogo(
+    icon: const Icon(
+      Icons.star,
+      color: Color.fromARGB(255, 195, 178, 23),
+      size: 11,
+    ),
+  ),
+  IconLogo(
+    icon: const Icon(
+      Icons.star,
+      color: Color.fromARGB(255, 195, 178, 23),
+      size: 11,
+    ),
+  ),
+  IconLogo(
+    icon: const Icon(
+      Icons.star_half,
+      color: Colors.grey,
+      size: 11,
+    ),
+  ),
+];
