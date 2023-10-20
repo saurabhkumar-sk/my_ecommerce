@@ -19,16 +19,16 @@ class _FirstSplashScreenState extends State<FirstSplashScreen> {
     return Scaffold(
       bottomNavigationBar: Row(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 312, bottom: 23.15, right: 19),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const SecondSplashScreen()));
-              },
-              child: const Text(
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SecondSplashScreen()));
+            },
+            child: const Padding(
+              padding: EdgeInsets.only(left: 312, bottom: 23.15, right: 19),
+              child: Text(
                 'Next',
                 style: TextStyle(
                   color: MyColors.pink,

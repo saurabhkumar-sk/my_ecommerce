@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/screens/home_scren.dart';
+import 'package:my_ecommerce/screens/page_view.dart';
 
 void main() {
   runApp(const MyEcommerceApp());
@@ -18,8 +18,8 @@ class MyEcommerceApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home: const SplashScreen(),
-      home: const HomeScreen(),
+      home: const PageViewScreen(),
+      // home: const HomeScreen(),
     );
   }
 }
