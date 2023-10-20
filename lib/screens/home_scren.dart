@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:my_ecommerce/components/appbar.dart';
 import 'package:my_ecommerce/database/database.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,37 +8,10 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromARGB(191, 67, 67, 67),
+      backgroundColor: const Color.fromARGB(191, 67, 67, 67),
       drawer: const Drawer(shape: BeveledRectangleBorder()),
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SvgPicture.asset(MyImages.logo),
-            const Text(
-              'Stylish',
-              style: TextStyle(
-                color: MyColors.cyan,
-                fontWeight: FontWeight.w700,
-                fontSize: 18,
-              ),
-            ),
-          ],
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 12),
-            child: GestureDetector(
-              onTap: () {},
-              child: const CircleAvatar(
-                backgroundImage: AssetImage(
-                  MyImages.avatar,
-                ),
-              ),
-            ),
-          )
-        ],
-      ),
+          title: const AppbarTitle(), actions: const [AppbarActionWidget()]),
       body: SingleChildScrollView(
         child: Column(
           children: [

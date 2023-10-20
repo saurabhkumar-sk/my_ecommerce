@@ -139,7 +139,8 @@ List<ProductModel> product = [
     price: '₹650',
     discountPrice: '₹1250 70%Off',
     icon: 'icon',
-  ),ProductModel(
+  ),
+  ProductModel(
     image: 'assets/images/watch.png',
     productName: 'IWC Schaffhausen 2021 Pilot/s Watch "SIHH 2019" 44mm',
     productDescription: '',
@@ -154,5 +155,206 @@ List<ProductModel> product = [
     price: '₹650',
     discountPrice: '₹1250 70%Off',
     icon: 'icon',
+  ),
+];
+
+//Favroitscreen images model
+List<FavroiteImages> favroiteImages = [
+  FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),FavroiteImages(
+    image: 'image',
+    productName: 'Black Winter....',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
   ),
 ];

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 
 class PageViewScreen extends StatefulWidget {
@@ -24,8 +25,9 @@ class _PageViewScreenState extends State<PageViewScreen> {
         unselectedItemColor: Colors.black,
         onTap: (value) {
           currentIndex = value;
-          setState(() {});
-          controller.jumpToPage(value);
+          setState(() {
+            controller.jumpToPage(value);
+          });
         },
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: ''),
@@ -40,10 +42,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
         controller: controller,
         children: [
           const HomeScreen(),
-          Container(
-            color: Colors.red,
-            child: const Text('1'),
-          ),
+          const FavoriteScreen(),
           Container(
             color: Colors.blue,
             child: const Text('1'),
