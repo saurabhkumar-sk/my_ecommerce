@@ -161,7 +161,7 @@ List<ProductModel> product = [
 //Favroitscreen images model
 List<FavroiteImages> favroiteImages = [
   FavroiteImages(
-    image: 'image',
+    image: 'assets/images/unsplash_NoVnXXmDNi0.png',
     productName: 'Black Winter....',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹499',
@@ -174,9 +174,179 @@ List<FavroiteImages> favroiteImages = [
         Icon(Icons.star_half),
       ],
     ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_0vsk2_9dkqo.png',
+    productName: 'Mens Starry',
+    productDescription: 'Mens Starry Sky Printed Shirt 100% Cotton Fabric',
+    price: '₹399',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_yTBMYCcZQRs.png',
+    productName: 'Black Dress',
+    productDescription:
+        'Solid Black Dress for Women, Sexy Chain Shorts Ladi...',
+    price: '₹2,000',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image:'assets/images/unsplash_Pdds9XsWyoM.png',
+    productName: 'Pink Embroide...',
+    productDescription: 'EARTHEN Rose Pink Embroidered Tiered Max...',
+    price: '₹1,900',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_9U18fiowwbw.png',
+    productName: 'Flare Dress',
+    productDescription:
+        'Antheaa Black & Rust Orange Floral Print Tiered Midi F...',
+    price: '₹1,990',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_0vsk2_9dkqo (1).png',
+    productName: 'denim dress',
+    productDescription: 'Blue cotton denim dress Look 2 Printed cotton dr...',
+    price: '₹999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_yTBMYCcZQRs (1).png',
+    productName: 'Jordan Stay',
+    productDescription:
+        'The classic Air Jordan 12 to create a shoe that\'s fres...',
+    price: '₹4,999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_Pdds9XsWyoM (1).png',
+    productName: 'Realme 7 ',
+    productDescription: '6 GB RAM | 64 GB ROM | Expandable Upto 256...',
+    price: '₹3,499',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_9U18fiowwbw (1).png',
+    productName: 'Sony PS4',
+    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
+    price: '₹1,999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_0vsk2_9dkqo (2).png',
+    productName: 'Black Jacket 12...',
+    productDescription:
+        'This warm and comfortable jacket is great for learni...',
+    price: '₹2,999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_yTBMYCcZQRs (2).png',
+    productName: 'D7200 Digital C...',
+    productDescription: 'D7200 Digital Camera (Nikon) In New Area...',
+    price: '₹26,999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_Pdds9XsWyoM (2).png',
+    productName: 'men’s & boys s...',
+    productDescription: 'George Walker Derby Brown Formal Shoes',
+    price: '₹999',
+    icon: const Row(
+      children: [
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star),
+        Icon(Icons.star_half),
+      ],
+    ),
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_9U18fiowwbw (2).png',
+    productName: 'MB....',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹499',
     icon: const Row(
@@ -188,165 +358,12 @@ List<FavroiteImages> favroiteImages = [
         Icon(Icons.star_half),
       ],
     ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
+  ),
+  FavroiteImages(
+    image: 'assets/images/unsplash_0vsk2_9dkqo (3).png',
+    productName: 'ChocoBar',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
-    ),
-  ),FavroiteImages(
-    image: 'image',
-    productName: 'Black Winter....',
-    productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
-    price: '₹499',
+    price: '₹299',
     icon: const Row(
       children: [
         Icon(Icons.star),

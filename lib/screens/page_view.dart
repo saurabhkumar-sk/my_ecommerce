@@ -39,6 +39,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
         ],
       ),
       body: PageView(
+        physics: const NeverScrollableScrollPhysics(),
         controller: controller,
         children: [
           const HomeScreen(),

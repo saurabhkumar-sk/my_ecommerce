@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/components/appbar.dart';
+import 'package:my_ecommerce/components/textfield.dart';
 import 'package:my_ecommerce/database/database.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,50 +9,35 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(191, 67, 67, 67),
+      // backgroundColor: const Color.fromARGB(191, 67, 67, 67),
       drawer: const Drawer(shape: BeveledRectangleBorder()),
       appBar: AppBar(
           title: const AppbarTitle(), actions: const [AppbarActionWidget()]),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              child: Container(
-                color: MyColors.primarywhite,
-                height: 40,
-                width: 343,
-                child: const TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Search any Product..',
-                    hintStyle: TextStyle(color: Color(0xFFBBBBBB)),
-                    prefixIcon:
-                        Icon(Icons.search_sharp, color: Color(0xFFBBBBBB)),
-                    suffixIcon: Icon(Icons.mic_none, color: Color(0xFFBBBBBB)),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(6),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+            const Padding(
+              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              child: TextFieldWidget(),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 22, top: 17),
+            const Padding(
+              padding: EdgeInsets.only(left: 22, top: 17),
               child: Row(
                 children: [
-                  const Text(
+                  Text(
                     'All Featured',
                     style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 79),
-                    child: Container(
+                    padding: EdgeInsets.only(left: 79),
+                    child: Card(
+                      shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                      ),
                       color: MyColors.primarywhite,
-                      height: 24,
-                      width: 67,
-                      child: const Padding(
+                      // height: 24,
+                      // width: 67,
+                      child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: Row(
@@ -71,12 +57,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 12),
-                    child: Container(
+                    padding: EdgeInsets.only(left: 12),
+                    child: Card(
+                      shape: BeveledRectangleBorder(
+                        borderRadius: BorderRadius.zero,
+                      ),
                       color: MyColors.primarywhite,
-                      height: 24,
-                      width: 67,
-                      child: const Padding(
+                      // height: 24,
+                      // width: 67,
+                      child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                         child: Row(
@@ -101,16 +90,17 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 17),
             Padding(
               padding: const EdgeInsets.only(left: 5),
-              child: Container(
-                decoration: const BoxDecoration(
+              child: Card(
+                shape: const RoundedRectangleBorder(
                   borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(10),
-                      bottomLeft: Radius.circular(10)),
-                  color: MyColors.primarywhite,
+                    topLeft: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                  ),
                 ),
+                color: MyColors.primarywhite,
                 margin: const EdgeInsets.only(left: 17),
-                height: 87,
-                width: 439,
+                // height: 87,
+                // width: 439,
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -742,6 +732,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 //DOt Circle
 class CircleR extends StatelessWidget {
