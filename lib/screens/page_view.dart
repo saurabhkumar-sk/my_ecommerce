@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/screens/cart_screen.dart';
 import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 
@@ -44,10 +45,7 @@ class _PageViewScreenState extends State<PageViewScreen> {
         children: [
           const HomeScreen(),
           const FavoriteScreen(),
-          Container(
-            color: Colors.blue,
-            child: const Text('1'),
-          ),
+          const CartScreen(),
           Container(
             color: Colors.pink,
             child: const Text('1'),

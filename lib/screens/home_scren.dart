@@ -31,8 +31,8 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 79),
                     child: Card(
-                      shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
                       color: MyColors.primarywhite,
                       // height: 24,
@@ -59,8 +59,8 @@ class HomeScreen extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(left: 12),
                     child: Card(
-                      shape: BeveledRectangleBorder(
-                        borderRadius: BorderRadius.zero,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
                       color: MyColors.primarywhite,
                       // height: 24,
@@ -88,45 +88,37 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 17),
-            Padding(
-              padding: const EdgeInsets.only(left: 5),
-              child: Card(
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(10),
-                    bottomLeft: Radius.circular(10),
-                  ),
-                ),
-                color: MyColors.primarywhite,
-                margin: const EdgeInsets.only(left: 17),
-                // height: 87,
-                // width: 439,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(
-                      image.length,
-                      // 6,
-                      (index) => Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Column(
-                          children: [
-                            CircleAvatar(
-                              backgroundImage: AssetImage(
-                                image[index].image,
-                              ),
-                              radius: 28,
+            Container(
+              // shape: const BeveledRectangleBorder(),
+              color: MyColors.primarywhite,
+              // margin: const EdgeInsets.only(left: 17),
+              // height: 87,
+              // width: 439,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: List.generate(
+                    image.length,
+                    // 6,
+                    (index) => Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            backgroundImage: AssetImage(
+                              image[index].image,
                             ),
-                            Text(
-                              image[index].imageName,
-                              // 6.toString(),
-                              style: const TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                              ),
+                            radius: 28,
+                          ),
+                          Text(
+                            image[index].imageName,
+                            // 6.toString(),
+                            style: const TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w400,
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -732,8 +724,6 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
 
 //DOt Circle
 class CircleR extends StatelessWidget {
