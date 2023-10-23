@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/components/appbar.dart';
+import 'package:my_ecommerce/components/text.dart';
 import 'package:my_ecommerce/components/textfield.dart';
 import 'package:my_ecommerce/database/database.dart';
-import 'package:staggered_grid_view_flutter/rendering/sliver_staggered_grid.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
 import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
@@ -27,7 +27,10 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: 16),
             const TextFieldWidget(),
+            const TextWidgets(),
+            const SizedBox(height: 17),
             SizedBox(
               width: MediaQuery.of(context).size.width,
               child: StaggeredGridView.countBuilder(
@@ -48,25 +51,34 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Image.asset(favroiteImages[index].image),
-                          Text(
-                            favroiteImages[index].productName,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 16,
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Text(
+                              favroiteImages[index].productName,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 16,
+                              ),
                             ),
                           ),
-                          Text(
-                            favroiteImages[index].productDescription,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w400,
-                              fontSize: 10,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0),
+                            child: Text(
+                              favroiteImages[index].productDescription,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w400,
+                                fontSize: 10,
+                              ),
                             ),
                           ),
-                          Text(
-                            favroiteImages[index].price,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.w500,
-                              fontSize: 12,
+                          Padding(
+                            padding: const EdgeInsets.only(left: 8.0, top: 8),
+                            child: Text(
+                              favroiteImages[index].price,
+                              style: const TextStyle(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 12,
+                              ),
                             ),
                           ),
                           // Icon(favroiteImages[index].icon)
@@ -76,7 +88,7 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
                   ),
                 ),
                 staggeredTileBuilder: (int index) {
-                  final height = small ? 1.25 : 1.6;
+                  final height = small ? 1.4 : 1.7;
                   if (index.isEven) small = !small;
                   return StaggeredTile.count(1, height);
                 },

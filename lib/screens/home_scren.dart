@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/components/appbar.dart';
+import 'package:my_ecommerce/components/text.dart';
 import 'package:my_ecommerce/components/textfield.dart';
 import 'package:my_ecommerce/database/database.dart';
 
@@ -20,73 +21,7 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               child: TextFieldWidget(),
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 22, top: 17),
-              child: Row(
-                children: [
-                  Text(
-                    'All Featured',
-                    style: TextStyle(fontWeight: FontWeight.w600, fontSize: 18),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 79),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                      ),
-                      color: MyColors.primarywhite,
-                      // height: 24,
-                      // width: 67,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Sort ',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 12),
-                            ),
-                            Icon(
-                              Icons.import_export,
-                              size: 16,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.only(left: 12),
-                    child: Card(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(6)),
-                      ),
-                      color: MyColors.primarywhite,
-                      // height: 24,
-                      // width: 67,
-                      child: Padding(
-                        padding:
-                            EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                        child: Row(
-                          children: [
-                            Text(
-                              'Filter',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w400, fontSize: 12),
-                            ),
-                            Icon(
-                              Icons.filter_alt_outlined,
-                              size: 16,
-                            )
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            const TextWidget(),
             const SizedBox(height: 17),
             Container(
               // shape: const BeveledRectangleBorder(),
@@ -724,6 +659,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
 
 //DOt Circle
 class CircleR extends StatelessWidget {
