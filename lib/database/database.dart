@@ -7,10 +7,12 @@ class MyColors {
   static const white = Color(0xFFF3F3F3);
   static const grey = Color(0xFF626262);
   static const grey1 = Color(0xFF575757);
+  static const grey2 = Color(0xFF828282);
   static const orange = Color(0xFFFF4B26);
   static const black = Color(0xFF000000);
   static const cyan = Color(0xFF4392F9);
   static const primarywhite = Color(0xFFFFFFFF);
+  static const starColor = Color(0xFFEDB310);
 }
 
 class MyLogos {
@@ -165,14 +167,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'Black Winter....',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -180,14 +213,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'Mens Starry',
     productDescription: 'Mens Starry Sky Printed Shirt 100% Cotton Fabric',
     price: '₹399',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -196,29 +260,91 @@ List<FavroiteImages> favroiteImages = [
     productDescription:
         'Solid Black Dress for Women, Sexy Chain Shorts Ladi...',
     price: '₹2,000',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
-    image:'assets/images/unsplash_Pdds9XsWyoM.png',
+    image: 'assets/images/unsplash_Pdds9XsWyoM.png',
     productName: 'Pink Embroide...',
     productDescription: 'EARTHEN Rose Pink Embroidered Tiered Max...',
     price: '₹1,900',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -227,14 +353,45 @@ List<FavroiteImages> favroiteImages = [
     productDescription:
         'Antheaa Black & Rust Orange Floral Print Tiered Midi F...',
     price: '₹1,990',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -242,14 +399,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'denim dress',
     productDescription: 'Blue cotton denim dress Look 2 Printed cotton dr...',
     price: '₹999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -258,14 +446,45 @@ List<FavroiteImages> favroiteImages = [
     productDescription:
         'The classic Air Jordan 12 to create a shoe that\'s fres...',
     price: '₹4,999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -273,14 +492,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'Realme 7 ',
     productDescription: '6 GB RAM | 64 GB ROM | Expandable Upto 256...',
     price: '₹3,499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -288,14 +538,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'Sony PS4',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹1,999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -304,14 +585,45 @@ List<FavroiteImages> favroiteImages = [
     productDescription:
         'This warm and comfortable jacket is great for learni...',
     price: '₹2,999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -319,14 +631,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'D7200 Digital C...',
     productDescription: 'D7200 Digital Camera (Nikon) In New Area...',
     price: '₹26,999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -334,14 +677,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'men’s & boys s...',
     productDescription: 'George Walker Derby Brown Formal Shoes',
     price: '₹999',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -349,14 +723,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'MB....',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹499',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
   FavroiteImages(
@@ -364,14 +769,45 @@ List<FavroiteImages> favroiteImages = [
     productName: 'ChocoBar',
     productDescription: 'Autumn And Winter Casual cotton-padded jacket...',
     price: '₹299',
-    icon: const Row(
-      children: [
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star),
-        Icon(Icons.star_half),
-      ],
+    icon: const Padding(
+      padding: EdgeInsets.only(left: 8, top: 8),
+      child: Row(
+        children: [
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star,
+            color: MyColors.starColor,
+            size: 14,
+          ),
+          Icon(
+            Icons.star_half,
+            color: Color(0xFFA4A9B3),
+            size: 14,
+          ),
+          Text(
+            '  6,890',
+            style: TextStyle(
+              fontSize: 10,
+              fontWeight: FontWeight.w400,
+              color: Color(0xFFA4A9B3),
+            ),
+          )
+        ],
+      ),
     ),
   ),
 ];

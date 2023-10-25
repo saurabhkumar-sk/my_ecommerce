@@ -12,12 +12,35 @@ class PageViewScreen extends StatefulWidget {
 
 class _PageViewScreenState extends State<PageViewScreen> {
   int currentIndex = 0;
+  Widget? index;
   final controller = PageController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        // BottomAppBar(
+        //   // shadowColor: MyColors.primarywhite,
+        //   color: const Color(0xFFFFFFFF),
+        //   child: Row(
+        //     children: [
+        //       IconButton(icon: const Icon(Icons.home), onPressed: () {}),
+        //       const Spacer(),
+        //       IconButton(
+        //           icon: const Icon(Icons.favorite_border_rounded),
+        //           onPressed: () {}),
+        //       const Spacer(),
+        //       IconButton(icon: const Icon(Icons.search), onPressed: () {}),
+        //       const Spacer(),
+        //       IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
+        //     ],
+        //   ),
+        // ),
+        selectedLabelStyle:
+            const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+        unselectedLabelStyle:
+            const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
+
         type: BottomNavigationBarType.fixed,
         currentIndex: currentIndex,
         iconSize: 24,
@@ -31,14 +54,34 @@ class _PageViewScreenState extends State<PageViewScreen> {
           });
         },
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite_border), label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: 'Home'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.add_shopping_cart), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: ''),
+            icon: Icon(Icons.favorite_border),
+            label: 'Wishlist',
+          ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.add_shopping_cart,
+                color: Colors.white,
+              ),
+              label: ''),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
         ],
       ),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(top: 30),
+        child: FloatingActionButton(
+          backgroundColor: Colors.white,
+          onPressed: () {},
+          shape: const OvalBorder(),
+          child: const Icon(
+            Icons.shopping_cart,
+            color: Colors.black,
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller: controller,

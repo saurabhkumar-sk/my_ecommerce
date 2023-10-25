@@ -81,14 +81,14 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
                               ),
                             ),
                           ),
-                          // Icon(favroiteImages[index].icon)
+                          favroiteImages[index].icon,
                         ],
                       ))
                     ],
                   ),
                 ),
                 staggeredTileBuilder: (int index) {
-                  final height = small ? 1.4 : 1.7;
+                  final height = small ? 1.5 : 1.8;
                   if (index.isEven) small = !small;
                   return StaggeredTile.count(1, height);
                 },

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/components/button.dart';
+import 'package:my_ecommerce/components/cart_screen_buttons.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 
@@ -130,7 +131,19 @@ class _CartScreenState extends State<CartScreen> {
                   fontSize: 14,
                 ),
               ),
-              const Buttons(),
+              const Padding(
+                padding: EdgeInsets.only(top: 8.0, bottom: 14),
+                child: Row(
+                  children: [
+                    NearestStoreButton(),
+                    VipButton(),
+                    ReturnPolicyBtton(),
+                  ],
+                ),
+              ),
+              const SizedBox(
+                height: 100,
+              )
             ],
           ),
         ),
