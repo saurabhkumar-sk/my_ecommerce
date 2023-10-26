@@ -9,15 +9,20 @@ class GetStartedScreen extends StatelessWidget {
     return Scaffold(
       extendBody: true,
       body: GestureDetector(
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const HomeScreen(),
-              ),
-            );
-          },
-          child: Image.asset('assets/images/unsplash_fouVDmGXoPI.png')),
+        onTap: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HomeScreen(),
+            ),
+          );
+        },
+        child: Image.asset(
+          'assets/images/unsplash_fouVDmGXoPI.png',
+          fit: BoxFit.cover,
+          width: MediaQuery.of(context).size.width,
+        ),
+      ),
     );
   }
 }

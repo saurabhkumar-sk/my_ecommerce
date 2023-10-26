@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/components/button.dart';
 import 'package:my_ecommerce/components/cart_screen_buttons.dart';
-import 'package:my_ecommerce/components/text.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
-import 'package:staggered_grid_view_flutter/widgets/staggered_grid_view.dart';
-import 'package:staggered_grid_view_flutter/widgets/staggered_tile.dart';
 
 class CartScreen extends StatefulWidget {
   const CartScreen({super.key});
