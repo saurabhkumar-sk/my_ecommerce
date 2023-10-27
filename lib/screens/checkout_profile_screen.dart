@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/checkout_screen.dart';
+import 'package:my_ecommerce/screens/shopping_bag_screen.dart';
 
 class CheckoutProfileScreen extends StatefulWidget {
   const CheckoutProfileScreen({super.key});
@@ -424,7 +425,14 @@ class _CheckoutProfileScreenState extends State<CheckoutProfileScreen> {
                           borderRadius: BorderRadius.circular(4),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ShoppingBagScreen(),
+                          ),
+                        );
+                      },
                       child: const Text(
                         "Save",
                         style: TextStyle(

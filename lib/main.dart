@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/splash/splash_screen.dart';
+import 'package:my_ecommerce/screens/checkout_profile_screen.dart';
 
 void main() {
   runApp(const MyEcommerceApp());
@@ -18,8 +18,8 @@ class MyEcommerceApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const SplashScreen(),
-      // home: const CheckoutProfileScreen(),
+      // home: const CheckOutScreen(),
+      home: const CheckoutProfileScreen(),
       // home: const HomeScreen(),
     );
   }
