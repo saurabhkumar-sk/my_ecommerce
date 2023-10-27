@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/login_screen.dart';
@@ -20,24 +18,23 @@ class _FirstSplashScreenState extends State<FirstSplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          GestureDetector(
-            onTap: () {
-              // Platform.
+          TextButton(
+            onPressed: () {
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SecondSplashScreen()));
-            },
-            child: const Padding(
-              padding: EdgeInsets.only(left: 312, bottom: 23.15, right: 19),
-              child: Text(
-                'Next',
-                style: TextStyle(
-                  color: MyColors.pink,
-                  fontSize: 18,
-                  fontWeight: FontWeight.w600,
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SecondSplashScreen(),
                 ),
+              );
+            },
+            child: const Text(
+              'Next',
+              style: TextStyle(
+                color: MyColors.pink,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ),

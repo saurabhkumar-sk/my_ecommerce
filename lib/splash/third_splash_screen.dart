@@ -3,7 +3,6 @@ import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/login_screen.dart';
 import 'package:my_ecommerce/splash/second_splash_screen.dart';
 
-
 class ThirdSplascScreen extends StatefulWidget {
   const ThirdSplascScreen({super.key});
 
@@ -18,50 +17,47 @@ class _ThirdSplascScreenState extends State<ThirdSplascScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 22),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-              onPressed: () {
-                count--;
-                Navigator.pop(
+      bottomNavigationBar: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextButton(
+            onPressed: () {
+              count--;
+              Navigator.pop(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SecondSplashScreen(),
+                ),
+              );
+            },
+            child: const Text(
+              'Prev',
+              style: TextStyle(
+                color: MyColors.fontgrey,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pushAndRemoveUntil(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const SecondSplashScreen(),
+                    builder: (context) => const LoginScreen(),
                   ),
-                );
-              },
-              child: const Text(
-                'Prev',
-                style: TextStyle(
-                  color: MyColors.fontgrey,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
+                  (route) => false);
+            },
+            child: const Text(
+              'Get Started',
+              style: TextStyle(
+                color: MyColors.pink,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
               ),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const LoginScreen(),
-                    ),
-                    (route) => false);
-              },
-              child: const Text(
-                'Get Started',
-                style: TextStyle(
-                  color: MyColors.pink,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
       body: Column(
         children: [

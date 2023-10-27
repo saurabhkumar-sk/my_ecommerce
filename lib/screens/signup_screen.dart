@@ -141,11 +141,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
-                left: 110,
-                top: 40,
-              ),
+            const SizedBox(height: 40),
+            const Center(
               child: Text(
                 "- OR Continue with -",
                 style: TextStyle(
@@ -155,26 +152,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 66, top: 20),
-              child: Row(
-                children: [
-                  socialMediaAuthButtons(
-                    widget: Image.asset('assets/images/google 1.png'),
-                  ),
-                  socialMediaAuthButtons(
-                    widget: Image.asset('assets/images/apple 1.png'),
-                  ),
-                  socialMediaAuthButtons(
-                    widget:
-                        Image.asset('assets/images/facebook-app-symbol 1.png'),
-                  ),
-                ],
-              ),
+            const SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                socialMediaAuthButtons(
+                  widget: Image.asset('assets/images/google 1.png'),
+                ),
+                socialMediaAuthButtons(
+                  widget: Image.asset('assets/images/apple 1.png'),
+                ),
+                socialMediaAuthButtons(
+                  widget:
+                      Image.asset('assets/images/facebook-app-symbol 1.png'),
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 29,
-            ),
+            const SizedBox(height: 15),
             Center(
               child: GestureDetector(
                 onTap: () {

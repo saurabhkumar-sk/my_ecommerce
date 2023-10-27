@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/forget_password_screen.dart';
+import 'package:my_ecommerce/screens/get_started_screen.dart';
 import 'package:my_ecommerce/screens/signup_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -77,33 +78,32 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(
-              left: 242,
-              top: 9,
-            ),
-            child: GestureDetector(
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ForgetPasswordScreen(),
-                    ));
-              },
-              child: const Text(
-                'Forgot Password?',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  color: MyColors.pink,
-                ),
-              ),
-            ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ForgetPasswordScreen(),
+                  ));
+            },
+            child: Align(
+                alignment: Alignment.centerRight,
+                child: TextButton(
+                  onPressed: () {},
+                  child: const Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w400,
+                      color: MyColors.pink,
+                    ),
+                  ),
+                )),
           ),
           Padding(
             padding: const EdgeInsets.only(
               left: 29,
               right: 29,
-              top: 52,
+              top: 45,
             ),
             child: SizedBox(
               width: double.infinity,
@@ -115,7 +115,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     borderRadius: BorderRadius.circular(4),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const GetStartedScreen(),
+                      ));
+                },
                 child: const Text(
                   "Login",
                   style: TextStyle(
@@ -127,30 +133,25 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
             ),
           ),
-          const Padding(
-            padding: EdgeInsets.only(
-              left: 125,
-              top: 90,
-            ),
+          const SizedBox(height: 75),
+          const Align(
+            alignment: Alignment.center,
             child: Text("- OR Continue with -"),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 95, top: 20),
-            child: Row(
-              children: [
-                socialMediaAuthButtons(
-                    widget: Image.asset('assets/images/google 1.png')),
-                socialMediaAuthButtons(
-                    widget: Image.asset('assets/images/apple 1.png')),
-                socialMediaAuthButtons(
-                    widget:
-                        Image.asset('assets/images/facebook-app-symbol 1.png')),
-              ],
-            ),
+          const SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              socialMediaAuthButtons(
+                  widget: Image.asset('assets/images/google 1.png')),
+              socialMediaAuthButtons(
+                  widget: Image.asset('assets/images/apple 1.png')),
+              socialMediaAuthButtons(
+                  widget:
+                      Image.asset('assets/images/facebook-app-symbol 1.png')),
+            ],
           ),
-          const SizedBox(
-            height: 29,
-          ),
+          const SizedBox(height: 29),
           Center(
             child: GestureDetector(
               onTap: () {

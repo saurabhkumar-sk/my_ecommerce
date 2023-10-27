@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
+import 'package:my_ecommerce/screens/checkout_profile_screen.dart';
 
 class NearestStoreButton extends StatelessWidget {
   const NearestStoreButton({
@@ -339,7 +340,13 @@ class AddToCompare extends StatelessWidget {
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const CheckoutProfileScreen(),
+              ));
+        },
         icon: const Icon(
           Icons.compare,
           color: Color(0xFF323232),

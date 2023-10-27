@@ -1,440 +1,482 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 
-class CheckoutScreen extends StatefulWidget {
-  const CheckoutScreen({super.key});
+class CheckOutScreen extends StatelessWidget {
+  const CheckOutScreen({super.key});
 
-  @override
-  State<CheckoutScreen> createState() => _CheckoutScreenState();
-}
-
-class _CheckoutScreenState extends State<CheckoutScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {},
-          icon: const Icon(
-            Icons.arrow_back_ios,
-          ),
-        ),
-        title: const Text(
-          'Checkout',
-          style: TextStyle(
-            fontWeight: FontWeight.w600,
-            fontSize: 18,
-          ),
-        ),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 31),
-              Center(
-                child: Stack(
-                  children: [
-                    const CircleAvatar(
-                      backgroundImage: AssetImage(
-                          'assets/images/2289_SkVNQSBGQU1PIDEwMjgtMTE2 2.png'),
-                      radius: 50,
-                    ),
-                    Positioned(
-                      left: 71,
-                      top: 66,
-                      child: ClipOval(
-                        child: Container(
-                          height: 32,
-                          width: 32,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
-                    Positioned(
-                      left: 75,
-                      top: 69.5,
-                      child: ClipOval(
-                        child: Container(
-                          height: 25,
-                          width: 25,
-                          decoration: const BoxDecoration(
-                            // border: Border.all(width: 2),
-                            color: Colors.blue,
+      body: Padding(
+        padding: const EdgeInsets.only(left: 22),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            TextButton.icon(
+              onPressed: () {},
+              icon: const Icon(
+                Icons.location_on_outlined,
+                size: 15,
+                color: MyColors.black,
+              ),
+              label: const Text(
+                'Delivery Address',
+                style: TextStyle(
+                  color: MyColors.black,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Card(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width - 310,
+                    width: MediaQuery.of(context).size.width - 148,
+                    // height: 79,
+                    // width: 241,
+                    color: MyColors.primarywhite,
+                    child: const Padding(
+                      padding: EdgeInsets.only(left: 12),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          SizedBox(
+                            height: 12,
                           ),
-                          child: const Icon(
-                            Icons.edit,
-                            size: 15,
-                            color: MyColors.primarywhite,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text(
+                                'Address :',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 12,
+                                  color: MyColors.black,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(right: 8),
+                                child: Icon(
+                                  Icons.edit_square,
+                                  color: Colors.black54,
+                                  size: 12,
+                                ),
+                              ),
+                            ],
                           ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              const SizedBox(height: 30),
-              const Text(
-                'Personal Details',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
-                ),
-              ),
-              const SizedBox(height: 20),
-              const Text(
-                'Email Address',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  autofillHints: Characters('@gmail.com'),
-                  decoration: const InputDecoration(
-                    hintText: 'aashifa@gmail.com',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+                          SizedBox(height: 4),
+                          Text(
+                            '216 St Paul\'s Rd, London N1 2LL, UK',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                              color: MyColors.black,
+                            ),
+                          ),
+                          Text('Contact :  +44-784232'),
+                        ],
                       ),
                     ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 28),
-              const Text(
-                'Password',
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12,
-                ),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  autofillHints: Characters('name@#234&sd'),
-                  decoration: const InputDecoration(
-                    hintText: '************',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 14,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+                Card(
+                  child: Container(
+                    height: MediaQuery.of(context).size.width - 310,
+                    width: MediaQuery.of(context).size.width - 300,
+                    color: MyColors.primarywhite,
+                    child: IconButton(
+                      onPressed: () {},
+                      icon: const Icon(
+                        Icons.add_circle_outline_outlined,
+                        size: 24,
                       ),
                     ),
                   ),
                 ),
+              ],
+            ),
+            const SizedBox(height: 24),
+            const Text(
+              '  Shopping List',
+              style: TextStyle(
+                fontWeight: FontWeight.w600,
+                fontSize: 16,
               ),
-              const SizedBox(height: 14),
-              const Align(
-                alignment: Alignment.centerRight,
-                child: Text(
-                  'Change Password',
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    decorationColor: MyColors.pink,
-                    color: MyColors.pink,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 12,
-                  ),
-                ),
-              ),
-              const SizedBox(height: 36),
-              const Divider(),
-              const SizedBox(height: 34),
-              const Text(
-                'Business Address Details',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 22),
-              const Text(
-                'Pincode',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: '450116',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+            ),
+            const SizedBox(height: 10),
+            Card(
+              elevation: 3,
+              child: Container(
+                width: MediaQuery.of(context).size.width - 40,
+                height: 210,
+                color: MyColors.primarywhite,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: 150,
+                            width: 155,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                products[0].image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 5),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Women’s Casual Wear',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Variations :  ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 17,
+                                    width: 39,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(width: 0.3),
+                                        borderRadius: BorderRadius.circular(2)),
+                                    child: const Center(
+                                      child: Text(
+                                        'Black',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Container(
+                                    height: 17,
+                                    width: 39,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(width: 0.3),
+                                        borderRadius: BorderRadius.circular(2)),
+                                    child: const Center(
+                                      child: Text(
+                                        'Red',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                              const Row(
+                                children: [
+                                  Text(
+                                    '4.8 ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star_half,
+                                      color: Colors.grey, size: 11),
+                                ],
+                              ),
+                              const SizedBox(height: 7),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 29,
+                                    width: 84,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(
+                                        width: 0.3,
+                                      ),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "\$ 34.00",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          color: MyColors.black,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  const Column(
+                                    children: [
+                                      Text(
+                                        'upto 33% off',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: MyColors.pink,
+                                          fontSize: 8,
+                                        ),
+                                      ),
+                                      Text(
+                                        '\$ 64.00',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: MyColors.grey,
+                                          fontSize: 12,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          decorationColor: MyColors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                    ),
+                      const SizedBox(height: 5),
+                      const Divider(),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total Order (1) :',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: MyColors.black,
+                              fontSize: 12,
+                            ),
+                          ),
+                          Text(
+                            "\$ 34.00   ",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: MyColors.black,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      )
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(height: 15),
-              const Text(
-                'Address',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: '216 St Paul\'s Rd,',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+            ),
+            Card(
+              elevation: 3,
+              child: Container(
+                width: MediaQuery.of(context).size.width - 40,
+                height: 210,
+                color: MyColors.primarywhite,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 12),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const SizedBox(height: 10),
+                      Row(
+                        children: [
+                          SizedBox(
+                            height: 150,
+                            width: 155,
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(10),
+                              child: Image.asset(
+                                favroiteImages[0].image,
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(width: 5),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Men’s Jacket',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.w600,
+                                  fontSize: 13,
+                                ),
+                              ),
+                              const SizedBox(height: 8),
+                              Row(
+                                children: [
+                                  const Text(
+                                    'Variations :  ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 17,
+                                    width: 39,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(width: 0.3),
+                                        borderRadius: BorderRadius.circular(2)),
+                                    child: const Center(
+                                      child: Text(
+                                        'Green',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 5),
+                                  Container(
+                                    height: 17,
+                                    width: 39,
+                                    decoration: BoxDecoration(
+                                        border: Border.all(width: 0.3),
+                                        borderRadius: BorderRadius.circular(2)),
+                                    child: const Center(
+                                      child: Text(
+                                        'Grey',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 10),
+                              const Row(
+                                children: [
+                                  Text(
+                                    '4.7 ',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ),
+                                  ),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star,
+                                      color: Color(0xFFF7B305), size: 11),
+                                  Icon(Icons.star_half,
+                                      color: Colors.grey, size: 11),
+                                ],
+                              ),
+                              const SizedBox(height: 7),
+                              Row(
+                                children: [
+                                  Container(
+                                    height: 29,
+                                    width: 84,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.rectangle,
+                                      borderRadius: BorderRadius.circular(4),
+                                      border: Border.all(
+                                        width: 0.3,
+                                      ),
+                                    ),
+                                    child: const Center(
+                                      child: Text(
+                                        "\$ 45.00",
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w600,
+                                          color: MyColors.black,
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 12),
+                                  const Column(
+                                    children: [
+                                      Text(
+                                        'upto 28% off',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: MyColors.pink,
+                                          fontSize: 8,
+                                        ),
+                                      ),
+                                      Text(
+                                        '\$ 64.00',
+                                        style: TextStyle(
+                                          fontWeight: FontWeight.w500,
+                                          color: MyColors.grey,
+                                          fontSize: 12,
+                                          decoration:
+                                              TextDecoration.lineThrough,
+                                          decorationColor: MyColors.grey,
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ],
+                          )
+                        ],
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 28),
-              const Text(
-                'City',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: 'London',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
+                      const SizedBox(height: 5),
+                      const Divider(),
+                      const Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'Total Order (1) :',
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: MyColors.black,
+                              fontSize: 12,
+                            ),
+                          ),
+                          Text(
+                            "\$ 45.00   ",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              color: MyColors.black,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
                       ),
-                    ),
+                    ],
                   ),
                 ),
               ),
-              const SizedBox(height: 28),
-              const Text(
-                'State',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: 'N1 2LL,',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 28),
-              const Text(
-                'Country',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: 'United Kingdom',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 34),
-              const Divider(),
-              const SizedBox(height: 32),
-              const Text(
-                'Bank Account Details',
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 16,
-                ),
-              ),
-              const SizedBox(height: 24),
-              const Text(
-                'Bank Account Number',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: '204356XXXXXXX',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 28),
-              const Text(
-                'Account Holder’s Name',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: 'Abhiraj Sisodiya',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 28),
-              const Text(
-                'IFSC Code',
-                style: TextStyle(
-                    fontWeight: FontWeight.w400,
-                    fontSize: 12,
-                    color: MyColors.black),
-              ),
-              const SizedBox(height: 15),
-              SizedBox(
-                height: 48,
-                child: TextFormField(
-                  textInputAction: TextInputAction.done,
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: const InputDecoration(
-                    hintText: 'SBIN00428',
-                    hintStyle: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.black,
-                      fontSize: 13,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(8),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 34),
-              SizedBox(
-                width: double.infinity,
-                height: 55,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF83758),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: const Text(
-                    "Save",
-                    style: TextStyle(
-                      color: MyColors.white,
-                      fontWeight: FontWeight.w600,
-                      fontSize: 20,
-                    ),
-                  ),
-                ),
-              ),
-              const SizedBox(height: 57),
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

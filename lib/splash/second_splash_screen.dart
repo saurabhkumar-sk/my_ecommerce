@@ -17,54 +17,47 @@ class _SecondSplashScreenState extends State<SecondSplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: Padding(
-        padding: const EdgeInsets.only(
-          left: 21,
-          right: 9,
-          bottom: 22,
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            TextButton(
-              onPressed: () {
-                count--;
-                Navigator.pop(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SecondSplashScreen(),
-                  ),
-                );
-              },
-              child: const Text(
-                'Prev',
-                style: TextStyle(
-                  color: MyColors.fontgrey,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
+      bottomNavigationBar: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          TextButton(
+            onPressed: () {
+              count--;
+              Navigator.pop(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SecondSplashScreen(),
                 ),
+              );
+            },
+            child: const Text(
+              'Prev',
+              style: TextStyle(
+                color: MyColors.fontgrey,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
               ),
             ),
-            TextButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ThirdSplascScreen(),
-                  ),
-                );
-              },
-              child: const Text(
-                'Next',
-                style: TextStyle(
-                  color: MyColors.pink,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 18,
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ThirdSplascScreen(),
                 ),
+              );
+            },
+            child: const Text(
+              'Next',
+              style: TextStyle(
+                color: MyColors.pink,
+                fontWeight: FontWeight.w600,
+                fontSize: 18,
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       body: Column(
         children: [
