@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/model/my_model.dart';
+import 'package:my_ecommerce/model/onboarding_model.dart';
 
 class MyColors {
   static const fontgrey = Color(0xFFA8A8A9);
@@ -37,6 +38,27 @@ class MyIcon {
 class MyText {
   static const email = 'Enter Your email address';
 }
+
+List<OnBoardingModel> onBoardingList = [
+  OnBoardingModel(
+    image: MyImages.fashionsshop,
+    title: 'Choose Products',
+    subTitle:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+  ),
+  OnBoardingModel(
+    image: MyImages.saleconsulting,
+    title: 'Make Payment',
+    subTitle:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+  ),
+  OnBoardingModel(
+    image: MyImages.shoppingbag,
+    title: 'Get Your Order',
+    subTitle:
+        'Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.',
+  )
+];
 
 //Home Screen Images
 List<ImageModel> image = [

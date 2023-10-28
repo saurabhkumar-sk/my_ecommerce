@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/checkout_screen.dart';
+import 'package:my_ecommerce/screens/shipping_screen.dart';
 import 'package:my_ecommerce/screens/shopping_bag_screen.dart';
 
 class CheckoutProfileScreen extends StatefulWidget {
@@ -449,8 +450,11 @@ class _CheckoutProfileScreenState extends State<CheckoutProfileScreen> {
             ),
           ),
           const CheckOutScreen(),
+           const ShippingScreen(),
         ],
       ),
     );
   }
 }
+
+

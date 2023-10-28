@@ -30,13 +30,13 @@ class ShoppingBagScreen extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 22),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 38),
-              Row(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SizedBox(height: 15),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 22),
+              child: Row(
                 children: [
                   SizedBox(
                     width: 123,
@@ -157,8 +157,11 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 35),
-              Row(
+            ),
+            const SizedBox(height: 25),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 18.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   TextButton.icon(
@@ -188,10 +191,16 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 20),
-              const Divider(),
-              const SizedBox(height: 35),
-              const Text(
+            ),
+            const SizedBox(height: 5),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22),
+              child: Divider(),
+            ),
+            const SizedBox(height: 25),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Text(
                 'Order Payment Details',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
@@ -199,8 +208,11 @@ class ShoppingBagScreen extends StatelessWidget {
                   fontSize: 17,
                 ),
               ),
-              const SizedBox(height: 26),
-              const Row(
+            ),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -221,24 +233,33 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
-              const Row(
+            ),
+            const SizedBox(height: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(
-                    'Convenience',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w400,
-                      color: MyColors.black,
-                      fontSize: 16,
-                    ),
-                  ),
-                  Text(
-                    'Know More',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w600,
-                      color: MyColors.pink,
-                      fontSize: 12,
+                  Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: 'Convenience  ',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400,
+                            color: MyColors.black,
+                          ),
+                        ),
+                        TextSpan(
+                          text: ' Know More',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: MyColors.pink,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Text(
@@ -251,8 +272,11 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
-              const Row(
+            ),
+            const SizedBox(height: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -273,10 +297,16 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 41),
-              const Divider(),
-              const SizedBox(height: 29),
-              const Row(
+            ),
+            const SizedBox(height: 25),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Divider(),
+            ),
+            const SizedBox(height: 20),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
@@ -297,8 +327,11 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 12),
-              const Row(
+            ),
+            const SizedBox(height: 10),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 22.0),
+              child: Row(
                 children: [
                   Text(
                     'EMI Available   ',
@@ -318,9 +351,74 @@ class ShoppingBagScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              const SizedBox(height: 43),
-            ],
-          ),
+            ),
+            const SizedBox(height: 40),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.15,
+              width: double.infinity,
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Color(0xFFF8F8F8),
+                    border: Border.fromBorderSide(
+                      BorderSide(
+                        width: 0.1,
+                      ),
+                    ),
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(25),
+                      topRight: Radius.circular(25),
+                    )),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '₹ 7000.00',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: MyColors.black,
+                            fontSize: 16,
+                          ),
+                        ),
+                        Text(
+                          'View Details',
+                          style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: MyColors.pink,
+                            fontSize: 12,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      width: 225,
+                      height: 48,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: const Color(0xFFF83758),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                        ),
+                        onPressed: () {},
+                        child: const Text(
+                          "Proceed to Payment",
+                          style: TextStyle(
+                            color: MyColors.white,
+                            fontWeight: FontWeight.w100,
+                            fontSize: 17,
+                            fontStyle: FontStyle.italic,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          ],
         ),
       ),
     );
