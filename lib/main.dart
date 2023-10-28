@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_ecommerce/screens/on_boarding_screen.dart';
+import 'package:my_ecommerce/screens/get_started_screen.dart';
 
 void main() {
   runApp(const MyEcommerceApp());
@@ -21,7 +21,7 @@ class MyEcommerceApp extends StatelessWidget {
       // home: const CheckOutScreen(),
       // home: const CheckoutProfileScreen(),
       // home: const HomeScreen(),
-      home: const OnBoardingScreen(),
+      home: const GetStartedScreen(),
     );
   }
 }
