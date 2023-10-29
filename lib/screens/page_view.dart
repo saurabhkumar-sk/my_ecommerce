@@ -1,104 +1,125 @@
 import 'package:flutter/material.dart';
+import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/cart_screen.dart';
 import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
+import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class PageViewScreen extends StatefulWidget {
-  const PageViewScreen({super.key});
+  const PageViewScreen({
+    super.key,
+  });
 
   @override
   State<PageViewScreen> createState() => _PageViewScreenState();
 }
 
 class _PageViewScreenState extends State<PageViewScreen> {
-  int currentIndex = 0;
-  Widget? index;
-  final controller = PageController();
+  bool selectBottom = true;
+  final controller = PersistentTabController(initialIndex: 0);
+  List<Widget> _buildScreen() {
+    return [
+      const HomeScreen(),
+      const FavoriteScreen(),
+      const CartScreen(),
+      Container(
+        color: Colors.red,
+      ),
+      Container(
+        color: Colors.green,
+      )
+    ];
+  }
+
+  List<PersistentBottomNavBarItem> _navBarItem() {
+    return [
+      PersistentBottomNavBarItem(
+        icon: const Icon(
+          Icons.home_outlined,
+          color: MyColors.pink,
+        ),
+        inactiveIcon: const Icon(
+          Icons.home_outlined,
+          color: Colors.black,
+        ),
+        title: 'Home',
+        activeColorPrimary: MyColors.pink,
+        textStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
+        ),
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(
+          Icons.favorite_border_outlined,
+          color: MyColors.pink,
+        ),
+        inactiveIcon: const Icon(
+          Icons.favorite_outline_outlined,
+          color: Colors.black,
+        ),
+        title: 'Wishlist',
+        activeColorPrimary: MyColors.pink,
+        textStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
+        ),
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(
+          Icons.shopping_cart_outlined,
+          color: MyColors.pink,
+        ),
+        inactiveIcon: const Icon(
+          Icons.shopping_cart_outlined,
+          color: Colors.black,
+        ),
+        activeColorPrimary: MyColors.primarywhite,
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(
+          Icons.search,
+          color: MyColors.pink,
+        ),
+        inactiveIcon: const Icon(
+          Icons.search,
+          color: Colors.black,
+        ),
+        title: 'Search',
+        activeColorPrimary: MyColors.pink,
+        textStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
+        ),
+      ),
+      PersistentBottomNavBarItem(
+        icon: const Icon(
+          Icons.settings,
+          color: MyColors.pink,
+        ),
+        inactiveIcon: const Icon(
+          Icons.settings,
+          color: Colors.black,
+        ),
+        title: 'Setting',
+        activeColorPrimary: MyColors.pink,
+        textStyle: const TextStyle(
+          fontWeight: FontWeight.w400,
+          fontSize: 12,
+        ),
+      )
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        // BottomAppBar(
-        //   // shadowColor: MyColors.primarywhite,
-        //   color: const Color(0xFFFFFFFF),
-        //   child: Row(
-        //     children: [
-        //       IconButton(icon: const Icon(Icons.home), onPressed: () {}),
-        //       const Spacer(),
-        //       IconButton(
-        //           icon: const Icon(Icons.favorite_border_rounded),
-        //           onPressed: () {}),
-        //       const Spacer(),
-        //       IconButton(icon: const Icon(Icons.search), onPressed: () {}),
-        //       const Spacer(),
-        //       IconButton(icon: const Icon(Icons.settings), onPressed: () {}),
-        //     ],
-        //   ),
-        // ),
-        selectedLabelStyle:
-            const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-        unselectedLabelStyle:
-            const TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
-
-        type: BottomNavigationBarType.fixed,
-        currentIndex: currentIndex,
-        iconSize: 24,
-        backgroundColor: const Color(0xFFFFFFFF),
-        selectedItemColor: const Color(0xFFEB3030),
-        unselectedItemColor: Colors.black,
-        onTap: (value) {
-          currentIndex = value;
-          setState(() {
-            controller.jumpToPage(value);
-          });
-        },
-        items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home_sharp), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.favorite_border),
-            label: 'Wishlist',
-          ),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_shopping_cart,
-                color: Colors.white,
-              ),
-              label: ''),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
-        ],
-      ),
-      floatingActionButton: Padding(
-        padding: const EdgeInsets.only(top: 30),
-        child: FloatingActionButton(
-          backgroundColor: Colors.white,
-          onPressed: () {},
-          shape: const OvalBorder(),
-          child: const Icon(
-            Icons.shopping_cart,
-            color: Colors.black,
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: controller,
-        children: [
-          const HomeScreen(),
-          const FavoriteScreen(),
-          const CartScreen(),
-          Container(
-            color: Colors.pink,
-            child: const Text('1'),
-          ),
-          Container(
-            color: Colors.yellow,
-            child: const Text('1'),
-          ),
-        ],
-      ),
+    return PersistentTabView(
+      context,
+      screens: _buildScreen(),
+      items: _navBarItem(),
+      controller: controller,
+      navBarStyle: NavBarStyle.style15,
+      decoration: NavBarDecoration(borderRadius: BorderRadius.circular(4)),
     );
   }
 }

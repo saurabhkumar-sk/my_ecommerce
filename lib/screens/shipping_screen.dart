@@ -99,8 +99,14 @@ class _ShippingScreenState extends State<ShippingScreen> {
               TextFormField(
                 textAlign: TextAlign.right,
                 textInputAction: TextInputAction.done,
-                keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(
+                      color: MyColors.pink,
+                      width: 1.5,
+                    ),
+                  ),
                   prefix: Image.asset(
                     'assets/images/visa 1.png',
                     height: 20,
@@ -112,20 +118,22 @@ class _ShippingScreenState extends State<ShippingScreen> {
                     color: MyColors.black,
                     fontSize: 15,
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
                 ),
               ),
               const SizedBox(height: 25),
               TextFormField(
-                controller: controller,
                 textAlign: TextAlign.right,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(
+                      color: MyColors.pink,
+                      width: 1.5,
+                    ),
+                  ),
                   prefix: Image.asset(
                     'assets/images/paypal 1.png',
                     height: 20,
@@ -137,20 +145,22 @@ class _ShippingScreenState extends State<ShippingScreen> {
                     color: MyColors.black,
                     fontSize: 15,
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
                 ),
               ),
               const SizedBox(height: 25),
               TextFormField(
-                controller: controller,
                 textAlign: TextAlign.right,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(
+                      color: MyColors.pink,
+                      width: 1.5,
+                    ),
+                  ),
                   prefix: Image.asset(
                     'assets/images/maestro 1.png',
                     height: 20,
@@ -162,20 +172,22 @@ class _ShippingScreenState extends State<ShippingScreen> {
                     color: MyColors.black,
                     fontSize: 15,
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
                 ),
               ),
               const SizedBox(height: 25),
               TextFormField(
                 textAlign: TextAlign.right,
-                controller: controller,
                 textInputAction: TextInputAction.done,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: const BorderSide(
+                      color: MyColors.pink,
+                      width: 1.5,
+                    ),
+                  ),
                   prefix: Image.asset(
                     'assets/images/Sign in with Apple (Logo-only).png',
                   ),
@@ -185,11 +197,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                     color: MyColors.black,
                     fontSize: 15,
                   ),
-                  border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(8),
-                    ),
-                  ),
+                  border: const OutlineInputBorder(borderSide: BorderSide.none),
                 ),
               ),
               const SizedBox(height: 25),
@@ -246,7 +254,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                                     fontWeight: FontWeight.w600,
                                     fontSize: 14,
                                   ),
-                                )
+                                ),
                               ],
                             ),
 

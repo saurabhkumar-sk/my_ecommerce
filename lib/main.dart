@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:my_ecommerce/screens/splash_screen.dart';
 
 void main() {
-  runApp(const MyEcommerceApp());
+  runApp(const MyApp());
 }
 
-class MyEcommerceApp extends StatelessWidget {
-  const MyEcommerceApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {

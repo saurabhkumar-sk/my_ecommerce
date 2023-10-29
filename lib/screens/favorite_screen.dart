@@ -44,46 +44,41 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
                       borderRadius: BorderRadius.circular(15)),
                   color: MyColors.primarywhite,
                   surfaceTintColor: Colors.transparent,
-                  child: Stack(
-                    children: <Widget>[
-                      GridTile(
-                          child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Image.asset(favroiteImages[index].image),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Text(
-                              favroiteImages[index].productName,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 16,
-                              ),
-                            ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Image.asset(favroiteImages[index].image),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          favroiteImages[index].productName,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0),
-                            child: Text(
-                              favroiteImages[index].productDescription,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 10,
-                              ),
-                            ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Text(
+                          favroiteImages[index].productDescription,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 10,
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 8.0, top: 8),
-                            child: Text(
-                              favroiteImages[index].price,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 12,
-                              ),
-                            ),
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0, top: 8),
+                        child: Text(
+                          favroiteImages[index].price,
+                          style: const TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
                           ),
-                          favroiteImages[index].icon,
-                        ],
-                      ))
+                        ),
+                      ),
+                      favroiteImages[index].icon,
                     ],
                   ),
                 ),
