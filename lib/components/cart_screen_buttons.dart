@@ -203,7 +203,13 @@ class BuyNow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const CheckoutProfileScreen(),
+            ));
+      },
       child: Stack(
         children: [
           Padding(
@@ -226,12 +232,12 @@ class BuyNow extends StatelessWidget {
                   ],
                 ),
               ),
-              height: 36, width: 136,
-              // onPressed: () {},
+              height: 36,
+              width: 136,
               child: const Padding(
                 padding: EdgeInsets.only(left: 48, top: 5),
                 child: Text(
-                  'Go to cart',
+                  'Buy Now',
                   style: TextStyle(
                     fontSize: 16,
                     // fontWeight: FontWeight.w500,
@@ -341,11 +347,11 @@ class AddToCompare extends StatelessWidget {
           ),
         ),
         onPressed: () {
-          Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CheckoutProfileScreen(),
-              ));
+          // Navigator.push(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => const CheckoutProfileScreen(),
+          //     ));
         },
         icon: const Icon(
           Icons.compare,

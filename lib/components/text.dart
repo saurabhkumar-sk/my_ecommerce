@@ -29,8 +29,7 @@ class _TextWidgetState extends State<TextWidget> {
                 borderRadius: BorderRadius.all(Radius.circular(6)),
               ),
               color: MyColors.primarywhite,
-              // height: 24,
-              // width: 67,
+              surfaceTintColor: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Row(
@@ -50,14 +49,13 @@ class _TextWidgetState extends State<TextWidget> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(left: 12),
+            padding: EdgeInsets.only(left: 12, right: 18),
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(6)),
               ),
               color: MyColors.primarywhite,
-              // height: 24,
-              // width: 67,
+              surfaceTintColor: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Row(
@@ -110,8 +108,7 @@ class _TextWidgetsState extends State<TextWidgets> {
                 borderRadius: BorderRadius.all(Radius.circular(6)),
               ),
               color: MyColors.primarywhite,
-              // height: 24,
-              // width: 67,
+              surfaceTintColor: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Row(
@@ -137,8 +134,7 @@ class _TextWidgetsState extends State<TextWidgets> {
                 borderRadius: BorderRadius.all(Radius.circular(6)),
               ),
               color: MyColors.primarywhite,
-              // height: 24,
-              // width: 67,
+              surfaceTintColor: Colors.transparent,
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
                 child: Row(

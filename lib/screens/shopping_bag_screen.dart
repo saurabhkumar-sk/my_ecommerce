@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
+import 'package:my_ecommerce/screens/checkout_profile_screen.dart';
+import 'package:my_ecommerce/screens/checkout_screen.dart';
+import 'package:my_ecommerce/screens/shipping_screen.dart';
 
 class ShoppingBagScreen extends StatelessWidget {
   const ShoppingBagScreen({super.key});
@@ -34,130 +37,132 @@ class ShoppingBagScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 15),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 22),
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 123,
-                    height: 153,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(5),
-                      child: Image.asset(
-                        products[0].image,
-                        fit: BoxFit.cover,
+            ...List.generate(1, (index) {
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 22),
+                child: Row(
+                  children: [
+                    SizedBox(
+                      width: 123,
+                      height: 153,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(5),
+                        child: Image.asset(
+                          products[index].image,
+                          fit: BoxFit.cover,
+                        ),
                       ),
                     ),
-                  ),
-                  const SizedBox(width: 21),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Women’s Casual Wear',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      ConstrainedBox(
-                        constraints: BoxConstraints.tight(
-                          const Size(188, 34),
-                        ),
-                        child: const Text(
-                          'Checked Single-Breasted Blazer',
+                    const SizedBox(width: 21),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          products[index].productName,
                           style: TextStyle(
-                            fontSize: 13,
-                            fontWeight: FontWeight.w400,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
                           ),
                         ),
-                      ),
-                      const SizedBox(height: 8),
-                      const Row(
-                        children: [
-                          SizedBox(
-                            height: 28,
-                            width: 86,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(4))),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ' Size 42 ',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: Icon(
-                                      Icons.expand_more_rounded,
-                                      size: 18,
-                                    ),
-                                  ),
-                                ],
-                              ),
+                        const SizedBox(height: 8),
+                        ConstrainedBox(
+                          constraints: BoxConstraints.tight(
+                            const Size(188, 34),
+                          ),
+                          child: Text(
+                            products[index].productDescription,
+                            style: TextStyle(
+                              fontSize: 13,
+                              fontWeight: FontWeight.w400,
                             ),
                           ),
-                          SizedBox(
-                            height: 28,
-                            width: 86,
-                            child: Card(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(4))),
-                              child: Row(
-                                children: [
-                                  Text(
-                                    ' Qty  1    ',
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                    ),
-                                  ),
-                                  Align(
-                                    alignment: Alignment.topRight,
-                                    child: Icon(
-                                      Icons.expand_more_rounded,
-                                      size: 18,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(height: 11),
-                      const Text.rich(
-                        TextSpan(
+                        ),
+                        const SizedBox(height: 8),
+                        const Row(
                           children: [
-                            TextSpan(
-                              text: 'Delivery by  ',
-                              style: TextStyle(
-                                fontSize: 13,
-                                fontWeight: FontWeight.w400,
+                            SizedBox(
+                              height: 28,
+                              width: 86,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(4))),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      ' Size 42 ',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Icon(
+                                        Icons.expand_more_rounded,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                            TextSpan(
-                              text: '10 May 2XXX',
-                              style: TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
+                            SizedBox(
+                              height: 28,
+                              width: 86,
+                              child: Card(
+                                shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(4))),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      ' Qty  1    ',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w400,
+                                      ),
+                                    ),
+                                    Align(
+                                      alignment: Alignment.topRight,
+                                      child: Icon(
+                                        Icons.expand_more_rounded,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
                           ],
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+                        const SizedBox(height: 11),
+                        const Text.rich(
+                          TextSpan(
+                            children: [
+                              TextSpan(
+                                text: 'Delivery by  ',
+                                style: TextStyle(
+                                  fontSize: 13,
+                                  fontWeight: FontWeight.w400,
+                                ),
+                              ),
+                              TextSpan(
+                                text: '10 May 2XXX',
+                                style: TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              );
+            }),
             const SizedBox(height: 25),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18.0),
@@ -402,7 +407,14 @@ class ShoppingBagScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(4),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    const CheckoutProfileScreen(),
+                              ));
+                        },
                         child: const Text(
                           "Proceed to Payment",
                           style: TextStyle(

@@ -5,8 +5,10 @@ import 'package:my_ecommerce/model/onboarding_model.dart';
 class MyColors {
   static const fontgrey = Color(0xFFA8A8A9);
   static const pink = Color(0xFFF83758);
+  static const pink12 = Color(0xFFFA7189);
   static const white = Color(0xFFF3F3F3);
   static const grey = Color(0xFF626262);
+  static const mediumGrey = Color(0xFF808488);
   static const grey1 = Color(0xFF575757);
   static const grey2 = Color(0xFF828282);
   static const orange = Color(0xFFFF4B26);
@@ -77,7 +79,7 @@ List<ProductModel> products = [
     image: 'assets/images/girl.png',
     productName: 'Women Printed Kurta',
     productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
-    price: '₹1500',
+    price: '₹1,500',
     discountPrice: '₹2499 40%Off',
     icon: 'icon',
   ),
@@ -85,7 +87,7 @@ List<ProductModel> products = [
     image: 'assets/images/shoes.png',
     productName: 'HRX by Hrithik Roshan',
     productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
-    price: '₹2499',
+    price: '₹2,499',
     discountPrice: '₹4999 50%Off',
     icon: 'icon',
   ),
@@ -93,7 +95,7 @@ List<ProductModel> products = [
     image: 'assets/images/girl.png',
     productName: 'Women Printed Kurta',
     productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
-    price: '₹1500',
+    price: '₹1,500',
     discountPrice: '₹2499 40%Off',
     icon: 'icon',
   ),
@@ -101,7 +103,7 @@ List<ProductModel> products = [
     image: 'assets/images/shoes.png',
     productName: 'HRX by Hrithik Roshan',
     productDescription: 'Neque porro quisquam est qui dolorem ipsum quia',
-    price: '₹2499',
+    price: '₹2,499',
     discountPrice: '₹4999 50%Off',
     icon: 'icon',
   ),
@@ -831,5 +833,46 @@ List<FavroiteImages> favroiteImages = [
         ],
       ),
     ),
+  ),
+];
+
+//5 Star
+List star = [
+  const Row(
+    children: [
+      Icon(
+        Icons.star,
+        color: MyColors.starColor,
+        size: 18,
+      ),
+      Icon(
+        Icons.star,
+        color: MyColors.starColor,
+        size: 18,
+      ),
+      Icon(
+        Icons.star,
+        color: MyColors.starColor,
+        size: 14,
+      ),
+      Icon(
+        Icons.star,
+        color: MyColors.starColor,
+        size: 18,
+      ),
+      Icon(
+        Icons.star_half,
+        color: Color(0xFFA4A9B3),
+        size: 18,
+      ),
+      Text(
+        '   56,890',
+        style: TextStyle(
+          fontSize: 10,
+          fontWeight: FontWeight.w400,
+          color: Color(0xFFA4A9B3),
+        ),
+      )
+    ],
   ),
 ];

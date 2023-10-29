@@ -89,7 +89,13 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ForgetPasswordScreen(),
+                        ));
+                  },
                   child: const Text(
                     'Forgot Password?',
                     style: TextStyle(

@@ -34,7 +34,6 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
             SizedBox(
               width: MediaQuery.of(context).size.width,
               child: StaggeredGridView.countBuilder(
-                // gridDelegate: SliverStaggeredGridDelegateWithMaxCrossAxisExtent(maxCrossAxisExtent: ),
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -44,6 +43,7 @@ class _FavoriteStateScreen extends State<FavoriteScreen> {
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15)),
                   color: MyColors.primarywhite,
+                  surfaceTintColor: Colors.transparent,
                   child: Stack(
                     children: <Widget>[
                       GridTile(

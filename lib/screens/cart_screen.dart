@@ -11,6 +11,10 @@ class CartScreen extends StatefulWidget {
 }
 
 class _CartScreenState extends State<CartScreen> {
+  int currentIndex = 0;
+  int buttonCurrentIndex = 0;
+  final PageController pageController = PageController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,35 +43,32 @@ class _CartScreenState extends State<CartScreen> {
                   height: 213,
                   child: Stack(
                     children: [
-                      PageView(
-                        children: [
-                          Image.asset(
-                            'assets/images/unsplash_NoVnXXmDNi0 (1).png',
-                            fit: BoxFit.fill,
-                          ),
-                          Image.asset(
-                            favroiteImages.first.image,
-                            fit: BoxFit.fill,
-                          ),
-                          Image.asset(
-                            favroiteImages.first.image,
-                            fit: BoxFit.fill,
-                          ),
-                        ],
+                      PageView.builder(
+                        controller: pageController,
+                        onPageChanged: (index) {
+                          setState(() {
+                            currentIndex = index;
+                          });
+                        },
+                        itemCount: 3,
+                        itemBuilder: (context, index) => Image.asset(
+                          'assets/images/unsplash_NoVnXXmDNi0 (1).png',
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                CircleR(),
-                CircleR(),
-                CircleR(),
-                CircleR(),
-                CircleR(),
+                ...List.generate(
+                  3,
+                  (index) =>
+                      Indicator(isActive: currentIndex == index ? true : false),
+                ),
               ],
             ),
             const SizedBox(height: 16),
@@ -87,20 +88,25 @@ class _CartScreenState extends State<CartScreen> {
               children: List.generate(
                 5,
                 (index) => Padding(
-                  padding: const EdgeInsets.only(
-                    left: 10.0,
-                    bottom: 16,
-                  ),
+                  padding:
+                      const EdgeInsets.only(left: 10.0, bottom: 16, right: 0.1),
                   child: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      setState(() {
+                        buttonCurrentIndex = index;
+                      });
+                    },
                     style: ButtonStyle(
+                      backgroundColor: MaterialStatePropertyAll(
+                        buttonCurrentIndex == index
+                            ? MyColors.pink12
+                            : MyColors.primarywhite,
+                      ),
                       fixedSize: const MaterialStatePropertyAll(Size(60, 32)),
-                      // overlayColor: MaterialStatePropertyAll(Colors.red),
-                      // backgroundColor: MaterialStatePropertyAll(Colors.red),
                       shape: MaterialStatePropertyAll(
                         RoundedRectangleBorder(
                           side: const BorderSide(
-                            color: MyColors.pink,
+                            color: MyColors.pink12,
                             width: 1.5,
                           ),
                           borderRadius: BorderRadius.circular(4),
@@ -109,8 +115,10 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                     child: Text(
                       '${index + 6} UK',
-                      style: const TextStyle(
-                        color: MyColors.pink,
+                      style: TextStyle(
+                        color: buttonCurrentIndex == index
+                            ? MyColors.primarywhite
+                            : MyColors.pink12,
                         fontWeight: FontWeight.w600,
                         fontSize: 13.5,
                       ),
@@ -119,16 +127,17 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
-                favroiteImages.first.productName,
-                style: const TextStyle(
+                'NIke Sneakers',
+                style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 20,
                 ),
               ),
             ),
+            const SizedBox(height: 8),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
@@ -139,40 +148,68 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Icon(
-                Icons.star,
-                color: Colors.yellow,
-              ),
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: star.first,
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                '₹1,500',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: RichText(
+                text: const TextSpan(
+                  children: <TextSpan>[
+                    TextSpan(
+                      text: '₹2,999',
+                      style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        decorationColor: MyColors.mediumGrey,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 14,
+                        color: MyColors.mediumGrey,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '  ₹1,500  ',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w500,
+                        fontSize: 14,
+                        color: MyColors.black,
+                      ),
+                    ),
+                    TextSpan(
+                      text: '50% Off',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w600,
+                        fontSize: 16,
+                        color: MyColors.pink12,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
+            const SizedBox(height: 8),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Product Details',
                 style: TextStyle(
                   fontFamily: 'Montserrat.bold',
+                  fontWeight: FontWeight.w500,
                   fontSize: 14,
                 ),
               ),
             ),
+            const SizedBox(height: 4),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
                 'Perhaps the most iconic sneaker of all-time, this original "Chicago"? colorway is the cornerstone to any sneaker collection. Made famous in 1985 by Michael Jordan, the shoe has stood the test of time, becoming the most famous colorway of the Air Jordan 1. This 2015 release saw the ...More',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 12,
                   fontFamily: 'Montserrat.w400',
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ),
@@ -247,6 +284,7 @@ class _CartScreenState extends State<CartScreen> {
                 AddToCompare(),
               ],
             ),
+            const SizedBox(height: 20),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Text(
@@ -258,10 +296,7 @@ class _CartScreenState extends State<CartScreen> {
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(
-                left: 16,
-                right: 21,
-              ),
+              padding: EdgeInsets.only(left: 16, right: 21, top: 9, bottom: 19),
               child: Row(
                 children: [
                   Text(
@@ -278,8 +313,7 @@ class _CartScreenState extends State<CartScreen> {
                         borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
                       color: MyColors.primarywhite,
-                      // height: 24,
-                      // width: 67,
+                      surfaceTintColor: Colors.transparent,
                       child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -300,14 +334,13 @@ class _CartScreenState extends State<CartScreen> {
                     ),
                   ),
                   Padding(
-                    padding: EdgeInsets.only(left: 12),
+                    padding: EdgeInsets.only(left: 1, right: 20),
                     child: Card(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(Radius.circular(6)),
                       ),
                       color: MyColors.primarywhite,
-                      // height: 24,
-                      // width: 67,
+                      surfaceTintColor: Colors.transparent,
                       child: Padding(
                         padding:
                             EdgeInsets.symmetric(horizontal: 8, vertical: 4),
@@ -339,6 +372,7 @@ class _CartScreenState extends State<CartScreen> {
                   (index) => Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: Container(
+                      margin: const EdgeInsets.only(left: 8),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(6),
                         color: MyColors.primarywhite,
@@ -352,13 +386,19 @@ class _CartScreenState extends State<CartScreen> {
                               products[index].image,
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.all(4),
-                            child: Text(
-                              products[index].productName,
-                              style: const TextStyle(
-                                fontSize: 12,
-                                fontWeight: FontWeight.w500,
+                          const SizedBox(height: 4),
+                          ConstrainedBox(
+                            constraints: BoxConstraints.loose(
+                              const Size(140, double.maxFinite),
+                            ),
+                            child: Padding(
+                              padding: const EdgeInsets.all(4),
+                              child: Text(
+                                products[index].productName,
+                                style: const TextStyle(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
@@ -390,15 +430,10 @@ class _CartScreenState extends State<CartScreen> {
                               ),
                             ),
                           ),
+                          const SizedBox(height: 4),
                           Padding(
                             padding: const EdgeInsets.only(left: 4.0),
-                            child: Text(
-                              products[index].discountPrice,
-                              style: const TextStyle(
-                                fontSize: 10,
-                                fontWeight: FontWeight.w400,
-                              ),
-                            ),
+                            child: star.first,
                           ),
                           const SizedBox(height: 4),
                         ],
@@ -408,9 +443,9 @@ class _CartScreenState extends State<CartScreen> {
                 ),
               ),
             ),
-            // const SizedBox(
-            //   height: 100,
-            // ),
+            const SizedBox(
+              height: 20,
+            ),
           ],
         ),
       ),

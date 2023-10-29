@@ -4,37 +4,40 @@ import 'package:my_ecommerce/components/text.dart';
 import 'package:my_ecommerce/components/textfield.dart';
 import 'package:my_ecommerce/database/database.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  PageController pageController = PageController();
+  int currentIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: const Color.fromARGB(191, 67, 67, 67),
       drawer: const Drawer(shape: BeveledRectangleBorder()),
       appBar: AppBar(
           title: const AppbarTitle(), actions: const [AppbarActionWidget()]),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              child: TextFieldWidget(),
-            ),
+            const TextFieldWidget(),
             const TextWidget(),
             const SizedBox(height: 17),
-            Container(
-              // shape: const BeveledRectangleBorder(),
+            Card(
+              surfaceTintColor: Colors.transparent,
               color: MyColors.primarywhite,
-              // margin: const EdgeInsets.only(left: 17),
-              // height: 87,
-              // width: 439,
+              elevation: 0,
+              shape: const ContinuousRectangleBorder(
+                  borderRadius: BorderRadius.zero),
               child: SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: List.generate(
                     image.length,
-                    // 6,
                     (index) => Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
@@ -47,7 +50,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                           Text(
                             image[index].imageName,
-                            // 6.toString(),
                             style: const TextStyle(
                               fontSize: 10,
                               fontWeight: FontWeight.w400,
@@ -60,108 +62,113 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
             ),
-
             const SizedBox(
               height: 20,
             ),
-
             SizedBox(
               height: 189,
               width: 350,
-              child: PageView(
-                children: [
-                  Stack(
-                    children: [
-                      Image.asset('assets/images/Rectangle 48.png'),
-                      const Positioned(
-                        left: 14,
-                        top: 40,
-                        child: Text(
-                          '50-40% OFF',
-                          style: TextStyle(
-                            color: MyColors.primarywhite,
-                            fontSize: 20,
-                            fontWeight: FontWeight.w700,
-                          ),
+              child: PageView.builder(
+                itemCount: 3,
+                controller: pageController,
+                onPageChanged: (index) {
+                  // pageController = value as PageController;
+                  setState(() {
+                    currentIndex = index;
+                  });
+                },
+                itemBuilder: (context, index) => Stack(
+                  children: [
+                    Image.asset('assets/images/Rectangle 48.png'),
+                    const Positioned(
+                      left: 14,
+                      top: 40,
+                      child: Text(
+                        '50-40% OFF',
+                        style: TextStyle(
+                          color: MyColors.primarywhite,
+                          fontSize: 20,
+                          fontWeight: FontWeight.w700,
                         ),
                       ),
-                      const Positioned(
-                        left: 14,
-                        top: 90,
-                        child: Text(
-                          'All colours',
-                          style: TextStyle(
-                            color: MyColors.primarywhite,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
+                    ),
+                    const Positioned(
+                      left: 14,
+                      top: 90,
+                      child: Text(
+                        'All colours',
+                        style: TextStyle(
+                          color: MyColors.primarywhite,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                      const Positioned(
-                        top: 70,
-                        left: 14,
-                        child: Text(
-                          'Now in (product)',
-                          style: TextStyle(
-                            color: MyColors.primarywhite,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                          ),
+                    ),
+                    const Positioned(
+                      top: 70,
+                      left: 14,
+                      child: Text(
+                        'Now in (product)',
+                        style: TextStyle(
+                          color: MyColors.primarywhite,
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
                         ),
                       ),
-                      Positioned(
-                        left: 14,
-                        top: 117,
-                        child: OutlinedButton(
-                          style: OutlinedButton.styleFrom(
-                            side: const BorderSide(
-                              width: 1,
+                    ),
+                    Positioned(
+                      left: 14,
+                      top: 117,
+                      child: OutlinedButton(
+                        style: OutlinedButton.styleFrom(
+                          side: const BorderSide(
+                            width: 1,
+                            color: MyColors.primarywhite,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          fixedSize: const Size(129, 32),
+                        ),
+                        onPressed: () {},
+                        child: const Row(
+                          children: [
+                            Text(
+                              'Shop Now',
+                              style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w600,
+                                  color: MyColors.primarywhite),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_rounded,
+                              size: 16,
                               color: MyColors.primarywhite,
                             ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6),
-                            ),
-                            fixedSize: const Size(129, 32),
-                          ),
-                          onPressed: () {},
-                          child: const Row(
-                            children: [
-                              Text(
-                                'Shop Now',
-                                style: TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w600,
-                                    color: MyColors.primarywhite),
-                              ),
-                              Icon(
-                                Icons.arrow_forward_rounded,
-                                size: 16,
-                                color: MyColors.primarywhite,
-                              ),
-                            ],
-                          ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                  Image.asset('assets/images/Rectangle 48.png'),
-                  Image.asset('assets/images/Rectangle 48.png'),
-                ],
+                    ),
+                  ],
+                ),
+                // Image.asset('assets/images/Rectangle 48.png'),
+                // Image.asset('assets/images/Rectangle 48.png'),
               ),
             ),
-            // ignore: prefer_const_constructors
             Padding(
               padding: const EdgeInsets.only(left: 158, top: 8),
-              child: const Row(
+              child: Row(
                 children: [
-                  CircleR(),
-                  CircleR(),
-                  CircleR(),
+                  ...List.generate(
+                    3,
+                    (index) => Indicator(
+                        isActive: currentIndex == index ? true : false),
+                  ),
                 ],
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              padding: const EdgeInsets.symmetric(vertical: 16),
               child: Stack(
                 children: [
                   Container(
@@ -244,80 +251,77 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    products.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          color: MyColors.primarywhite,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(6),
-                              child: Image.asset(
-                                products[index].image,
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  products.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: MyColors.primarywhite,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(6),
+                            child: Image.asset(
+                              products[index].image,
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: Text(
+                              products[index].productName,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(4),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              left: 4,
+                              right: 4,
+                            ),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints.tight(
+                                const Size(162, 32),
+                              ),
                               child: Text(
-                                products[index].productName,
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                left: 4,
-                                right: 4,
-                              ),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints.tight(
-                                  const Size(162, 32),
-                                ),
-                                child: Text(
-                                  products[index].productDescription,
-                                  style: const TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(4.0),
-                              child: Text(
-                                products[index].price,
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 4.0),
-                              child: Text(
-                                products[index].discountPrice,
+                                products[index].productDescription,
                                 style: const TextStyle(
                                   fontSize: 10,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 4),
-                          ],
-                        ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(
+                              products[index].price,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4.0),
+                            child: Text(
+                              products[index].discountPrice,
+                              style: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                        ],
                       ),
                     ),
                   ),
@@ -386,7 +390,7 @@ class HomeScreen extends StatelessWidget {
                     height: 60,
                     width: 343,
                     decoration: const BoxDecoration(
-                      color: MyColors.pink,
+                      color: Color(0xFFFD6E87),
                       borderRadius: BorderRadius.all(
                         Radius.circular(8),
                       ),
@@ -462,73 +466,71 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 16, top: 16, bottom: 16),
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: List.generate(
-                    product.length,
-                    (index) => Padding(
-                      padding: const EdgeInsets.only(left: 12),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(6),
-                          color: MyColors.primarywhite,
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            ClipRRect(
-                              borderRadius: BorderRadius.circular(4),
-                              child: Image.asset(
-                                product[index].image,
-                              ),
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: List.generate(
+                  product.length,
+                  (index) => Padding(
+                    padding: const EdgeInsets.only(left: 12),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(6),
+                        color: MyColors.primarywhite,
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(4),
+                            child: Image.asset(
+                              product[index].image,
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(4),
-                              child: ConstrainedBox(
-                                constraints: BoxConstraints.tight(
-                                  const Size(134, 48),
-                                ),
-                                child: Text(
-                                  product[index].productName,
-                                  style: const TextStyle(
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w400,
-                                  ),
-                                ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4),
+                            child: ConstrainedBox(
+                              constraints: BoxConstraints.tight(
+                                const Size(134, 48),
                               ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(4.0),
                               child: Text(
-                                products[index].price,
+                                product[index].productName,
                                 style: const TextStyle(
                                   fontSize: 12,
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 4.0),
-                              child: Text(
-                                products[index].discountPrice,
-                                style: const TextStyle(
-                                  fontSize: 10,
                                   fontWeight: FontWeight.w400,
                                 ),
                               ),
                             ),
-                            const SizedBox(height: 4),
-                          ],
-                        ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: Text(
+                              products[index].price,
+                              style: const TextStyle(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 4.0),
+                            child: Text(
+                              products[index].discountPrice,
+                              style: const TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w400,
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 4),
+                        ],
                       ),
                     ),
                   ),
                 ),
               ),
             ),
+            const SizedBox(height: 16),
             Container(
               width: 343,
               height: 270,
@@ -660,23 +662,26 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
+class Indicator extends StatelessWidget {
+  final bool isActive;
 
-//DOt Circle
-class CircleR extends StatelessWidget {
-  const CircleR({
+  const Indicator({
     super.key,
+    required this.isActive,
   });
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(2),
-      child: ClipOval(
-        child: Container(
-          color: Colors.grey,
-          height: 12,
-          width: 12,
+      child: Container(
+        decoration: BoxDecoration(
+          color:
+              isActive ? const Color.fromARGB(255, 242, 110, 132) : Colors.grey,
+          borderRadius: BorderRadius.circular(6),
         ),
+        height: isActive ? 12 : 10,
+        width: isActive ? 12 : 10,
       ),
     );
   }

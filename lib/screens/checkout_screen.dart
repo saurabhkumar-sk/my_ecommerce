@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
+import 'package:my_ecommerce/screens/shopping_bag_screen.dart';
 
 class CheckOutScreen extends StatelessWidget {
   const CheckOutScreen({super.key});
@@ -114,219 +115,233 @@ class CheckOutScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 19),
                       child: Scrollbar(
                         thickness: 10,
-                        child: Column(
-                          children: [
-                            Card(
-                              color: MyColors.primarywhite,
-                              surfaceTintColor: Colors.transparent,
-                              elevation: 3,
-                              margin: EdgeInsets.only(
-                                right: MediaQuery.of(context).size.width * 0.05,
-                              ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(left: 12),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const SizedBox(height: 10),
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          height: 150,
-                                          width: 155,
-                                          child: ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(10),
-                                            child: Image.asset(
-                                              products[index].image,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                        ),
-                                        const SizedBox(width: 5),
-                                        Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            Text(
-                                              products[index].productName,
-                                              // 'Women’s Casual Wear',
-                                              style: const TextStyle(
-                                                fontWeight: FontWeight.w600,
-                                                fontSize: 13,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ShoppingBagScreen(),
+                                ));
+                          },
+                          child: Column(
+                            children: [
+                              Card(
+                                color: MyColors.primarywhite,
+                                surfaceTintColor: Colors.transparent,
+                                elevation: 3,
+                                margin: EdgeInsets.only(
+                                  right:
+                                      MediaQuery.of(context).size.width * 0.05,
+                                ),
+                                child: Padding(
+                                  padding: const EdgeInsets.only(left: 12),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      const SizedBox(height: 10),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            height: 150,
+                                            width: 155,
+                                            child: ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              child: Image.asset(
+                                                products[index].image,
+                                                fit: BoxFit.cover,
                                               ),
                                             ),
-                                            const SizedBox(height: 8),
-                                            Row(
-                                              children: [
-                                                const Text(
-                                                  'Variations :  ',
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12,
-                                                  ),
+                                          ),
+                                          const SizedBox(width: 5),
+                                          Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                products[index].productName,
+                                                // 'Women’s Casual Wear',
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.w600,
+                                                  fontSize: 13,
                                                 ),
-                                                Container(
-                                                  height: 17,
-                                                  width: 39,
-                                                  decoration: BoxDecoration(
-                                                      border: Border.all(
-                                                          width: 0.3),
+                                              ),
+                                              const SizedBox(height: 8),
+                                              Row(
+                                                children: [
+                                                  const Text(
+                                                    'Variations :  ',
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    height: 17,
+                                                    width: 39,
+                                                    decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            width: 0.3),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2)),
+                                                    child: const Center(
+                                                      child: Text(
+                                                        'Black',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontSize: 12,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  const SizedBox(width: 5),
+                                                  Container(
+                                                    height: 17,
+                                                    width: 39,
+                                                    decoration: BoxDecoration(
+                                                        border: Border.all(
+                                                            width: 0.3),
+                                                        borderRadius:
+                                                            BorderRadius
+                                                                .circular(2)),
+                                                    child: const Center(
+                                                      child: Text(
+                                                        'Red',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          fontSize: 12,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
+                                              const SizedBox(height: 10),
+                                              const Row(
+                                                children: [
+                                                  Text(
+                                                    '4.8 ',
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.w500,
+                                                      fontSize: 12,
+                                                    ),
+                                                  ),
+                                                  Icon(Icons.star,
+                                                      color: Color(0xFFF7B305),
+                                                      size: 11),
+                                                  Icon(Icons.star,
+                                                      color: Color(0xFFF7B305),
+                                                      size: 11),
+                                                  Icon(Icons.star,
+                                                      color: Color(0xFFF7B305),
+                                                      size: 11),
+                                                  Icon(Icons.star,
+                                                      color: Color(0xFFF7B305),
+                                                      size: 11),
+                                                  Icon(Icons.star_half,
+                                                      color: Colors.grey,
+                                                      size: 11),
+                                                ],
+                                              ),
+                                              const SizedBox(height: 7),
+                                              Row(
+                                                children: [
+                                                  Container(
+                                                    height: 29,
+                                                    width: 84,
+                                                    decoration: BoxDecoration(
+                                                      shape: BoxShape.rectangle,
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              2)),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Black',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                const SizedBox(width: 5),
-                                                Container(
-                                                  height: 17,
-                                                  width: 39,
-                                                  decoration: BoxDecoration(
+                                                              4),
                                                       border: Border.all(
-                                                          width: 0.3),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              2)),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      'Red',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        fontSize: 12,
+                                                        width: 0.3,
+                                                      ),
+                                                    ),
+                                                    child: const Center(
+                                                      child: Text(
+                                                        "\$ 34.00",
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                          color: MyColors.black,
+                                                          fontSize: 16,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              ],
+                                                  const SizedBox(width: 12),
+                                                  const Column(
+                                                    children: [
+                                                      Text(
+                                                        'upto 33% off',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: MyColors.pink,
+                                                          fontSize: 8,
+                                                        ),
+                                                      ),
+                                                      Text(
+                                                        '\$ 64.00',
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.w500,
+                                                          color: MyColors.grey,
+                                                          fontSize: 12,
+                                                          decoration:
+                                                              TextDecoration
+                                                                  .lineThrough,
+                                                          decorationColor:
+                                                              MyColors.grey,
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  )
+                                                ],
+                                              ),
+                                            ],
+                                          )
+                                        ],
+                                      ),
+                                      const SizedBox(height: 5),
+                                      const Divider(),
+                                      const Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            'Total Order (1) :',
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w500,
+                                              color: MyColors.black,
+                                              fontSize: 12,
                                             ),
-                                            const SizedBox(height: 10),
-                                            const Row(
-                                              children: [
-                                                Text(
-                                                  '4.8 ',
-                                                  style: TextStyle(
-                                                    fontWeight: FontWeight.w500,
-                                                    fontSize: 12,
-                                                  ),
-                                                ),
-                                                Icon(Icons.star,
-                                                    color: Color(0xFFF7B305),
-                                                    size: 11),
-                                                Icon(Icons.star,
-                                                    color: Color(0xFFF7B305),
-                                                    size: 11),
-                                                Icon(Icons.star,
-                                                    color: Color(0xFFF7B305),
-                                                    size: 11),
-                                                Icon(Icons.star,
-                                                    color: Color(0xFFF7B305),
-                                                    size: 11),
-                                                Icon(Icons.star_half,
-                                                    color: Colors.grey,
-                                                    size: 11),
-                                              ],
-                                            ),
-                                            const SizedBox(height: 7),
-                                            Row(
-                                              children: [
-                                                Container(
-                                                  height: 29,
-                                                  width: 84,
-                                                  decoration: BoxDecoration(
-                                                    shape: BoxShape.rectangle,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            4),
-                                                    border: Border.all(
-                                                      width: 0.3,
-                                                    ),
-                                                  ),
-                                                  child: const Center(
-                                                    child: Text(
-                                                      "\$ 34.00",
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                        color: MyColors.black,
-                                                        fontSize: 16,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                                const SizedBox(width: 12),
-                                                const Column(
-                                                  children: [
-                                                    Text(
-                                                      'upto 33% off',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: MyColors.pink,
-                                                        fontSize: 8,
-                                                      ),
-                                                    ),
-                                                    Text(
-                                                      '\$ 64.00',
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.w500,
-                                                        color: MyColors.grey,
-                                                        fontSize: 12,
-                                                        decoration:
-                                                            TextDecoration
-                                                                .lineThrough,
-                                                        decorationColor:
-                                                            MyColors.grey,
-                                                      ),
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
-                                          ],
-                                        )
-                                      ],
-                                    ),
-                                    const SizedBox(height: 5),
-                                    const Divider(),
-                                    const Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.spaceBetween,
-                                      children: [
-                                        Text(
-                                          'Total Order (1) :',
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w500,
-                                            color: MyColors.black,
-                                            fontSize: 12,
                                           ),
-                                        ),
-                                        Text(
-                                          "\$ 34.00   ",
-                                          style: TextStyle(
-                                            fontWeight: FontWeight.w600,
-                                            color: MyColors.black,
-                                            fontSize: 12,
+                                          Text(
+                                            "\$ 34.00   ",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.w600,
+                                              color: MyColors.black,
+                                              fontSize: 12,
+                                            ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 10),
-                                  ],
+                                        ],
+                                      ),
+                                      const SizedBox(height: 10),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     );

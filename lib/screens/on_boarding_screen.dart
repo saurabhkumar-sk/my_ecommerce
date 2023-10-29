@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 import 'package:my_ecommerce/screens/login_screen.dart';
+import 'package:my_ecommerce/screens/page_view.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({super.key});
@@ -88,7 +89,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
+                                builder: (context) => const PageViewScreen(),
                               ));
                         },
                         child: const Text(

@@ -17,7 +17,9 @@ class _CheckoutProfileScreenState extends State<CheckoutProfileScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(
             Icons.arrow_back_ios,
           ),
@@ -430,7 +432,7 @@ class _CheckoutProfileScreenState extends State<CheckoutProfileScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ShoppingBagScreen(),
+                            builder: (context) => const CheckOutScreen(),
                           ),
                         );
                       },
@@ -450,11 +452,9 @@ class _CheckoutProfileScreenState extends State<CheckoutProfileScreen> {
             ),
           ),
           const CheckOutScreen(),
-           const ShippingScreen(),
+          const ShippingScreen(),
         ],
       ),
     );
   }
 }
-
-

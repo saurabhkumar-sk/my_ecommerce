@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
-import 'package:my_ecommerce/screens/home_scren.dart';
+import 'package:my_ecommerce/screens/page_view.dart';
 
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
@@ -64,7 +64,7 @@ class GetStartedScreen extends StatelessWidget {
                   Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => const HomeScreen(),
+                        builder: (context) => const PageViewScreen(),
                       ));
                 },
                 child: const Text(
