@@ -5,16 +5,16 @@ import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
-class PageViewScreen extends StatefulWidget {
-  const PageViewScreen({
+class BottomAppbarScreen extends StatefulWidget {
+  const BottomAppbarScreen({
     super.key,
   });
 
   @override
-  State<PageViewScreen> createState() => _PageViewScreenState();
+  State<BottomAppbarScreen> createState() => _BottomAppbarScreenState();
 }
 
-class _PageViewScreenState extends State<PageViewScreen> {
+class _BottomAppbarScreenState extends State<BottomAppbarScreen> {
   bool selectBottom = true;
   final controller = PersistentTabController(initialIndex: 0);
   List<Widget> _buildScreen() {

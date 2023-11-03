@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/checkout_profile_screen.dart';
-import 'package:my_ecommerce/screens/checkout_screen.dart';
-import 'package:my_ecommerce/screens/shipping_screen.dart';
 
 class ShoppingBagScreen extends StatelessWidget {
   const ShoppingBagScreen({super.key});
@@ -59,7 +57,7 @@ class ShoppingBagScreen extends StatelessWidget {
                       children: [
                         Text(
                           products[index].productName,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.w600,
                           ),
@@ -71,7 +69,7 @@ class ShoppingBagScreen extends StatelessWidget {
                           ),
                           child: Text(
                             products[index].productDescription,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontSize: 13,
                               fontWeight: FontWeight.w400,
                             ),

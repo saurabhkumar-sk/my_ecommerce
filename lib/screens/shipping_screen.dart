@@ -84,9 +84,9 @@ class _ShippingScreenState extends State<ShippingScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 22),
+              const SizedBox(height: 15),
               const Divider(),
-              const SizedBox(height: 28),
+              const SizedBox(height: 15),
               const Text(
                 'Payment',
                 style: TextStyle(
@@ -107,7 +107,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                       width: 1.5,
                     ),
                   ),
-                  prefix: Image.asset(
+                  prefixIcon: Image.asset(
                     'assets/images/visa 1.png',
                     height: 20,
                     width: 48,
@@ -134,7 +134,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                       width: 1.5,
                     ),
                   ),
-                  prefix: Image.asset(
+                  prefixIcon: Image.asset(
                     'assets/images/paypal 1.png',
                     height: 20,
                     width: 48,
@@ -161,7 +161,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                       width: 1.5,
                     ),
                   ),
-                  prefix: Image.asset(
+                  prefixIcon: Image.asset(
                     'assets/images/maestro 1.png',
                     height: 20,
                     width: 48,
@@ -188,7 +188,7 @@ class _ShippingScreenState extends State<ShippingScreen> {
                       width: 1.5,
                     ),
                   ),
-                  prefix: Image.asset(
+                  prefixIcon: Image.asset(
                     'assets/images/Sign in with Apple (Logo-only).png',
                   ),
                   hintText: '*********2109',
