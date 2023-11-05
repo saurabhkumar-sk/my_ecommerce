@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/cart_screen.dart';
+import 'package:my_ecommerce/screens/checkout_profile_screen.dart';
 import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
@@ -22,9 +23,7 @@ class _BottomAppbarScreenState extends State<BottomAppbarScreen> {
       const HomeScreen(),
       const FavoriteScreen(),
       const CartScreen(),
-      Container(
-        color: Colors.red,
-      ),
+      const CheckoutProfileScreen(),
       Container(
         color: Colors.green,
       )
