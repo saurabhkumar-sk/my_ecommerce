@@ -3,6 +3,8 @@ import 'package:my_ecommerce/database/database.dart';
 import 'package:my_ecommerce/screens/cart_screen.dart';
 import 'package:my_ecommerce/screens/favorite_screen.dart';
 import 'package:my_ecommerce/screens/home_scren.dart';
+import 'package:my_ecommerce/screens/search_screen.dart';
+import 'package:my_ecommerce/screens/setting_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 class PageViewScreen extends StatefulWidget {
@@ -22,12 +24,8 @@ class _PageViewScreenState extends State<PageViewScreen> {
       const HomeScreen(),
       const FavoriteScreen(),
       const CartScreen(),
-      Container(
-        color: Colors.red,
-      ),
-      Container(
-        color: Colors.green,
-      )
+      const SearchScreen(),
+      const SettingScreen(),
     ];
   }
 

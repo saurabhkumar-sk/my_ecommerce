@@ -39,6 +39,10 @@ dependencies:
   full_screen_image: ^2.0.0
   staggered_grid_view_flutter: ^0.0.4
   persistent_bottom_nav_bar: ^5.0.2
+  url_launcher: ^6.2.2
+  provider: ^6.1.1
+  firebase_auth: ^4.15.3
+  firebase_core: ^2.24.2
   
 
 dev_dependencies:
